@@ -13,20 +13,6 @@ apply plugin: 'kotlin-parcelize'
 
 apply from: '../signing.gradle'
 
-//#ifdef NONFREE
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.google.gms:google-services:4.3.10'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.1'
-    }
-}
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.google.firebase.crashlytics'
-//#endif
 
 android {
     compileSdkVersion 31
@@ -69,11 +55,6 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
-//#ifdef NONFREE
-            firebaseCrashlytics {
-                nativeSymbolUploadEnabled true
-            }
-//#endif
         }
     }
     packagingOptions {
@@ -183,9 +164,4 @@ dependencies {
     implementation 'org.apache.ftpserver:ftpserver-core:1.1.1'
     // Also a dependency of jCIFS-NG and Junrar.
     implementation 'org.slf4j:slf4j-android:1.7.32'
-
-//#ifdef NONFREE
-    implementation 'com.google.firebase:firebase-analytics:19.0.2'
-    implementation 'com.google.firebase:firebase-crashlytics-ndk:18.2.3'
-//#endif
 }
