@@ -7,7 +7,7 @@
 
 <resources>
 
-    <string name="app_name">LeOS Files</string>
+    <string name="app_name">FileManager</string>
 
     <string name="close">Schließen</string>
     <string name="copy">Kopieren</string>

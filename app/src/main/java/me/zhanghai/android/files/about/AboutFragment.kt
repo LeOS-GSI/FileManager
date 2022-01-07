@@ -59,13 +59,13 @@ class AboutFragment : Fragment() {
     }
 
     companion object {
-        private val GITHUB_URI = Uri.parse("https://github.com/zhanghai/MaterialFiles")
+        private val GITHUB_URI = Uri.parse("https://github.com/LeOS-GSI/FileManager")
         private val PRIVACY_POLICY_URI =
-            Uri.parse("https://github.com/zhanghai/MaterialFiles/blob/master/PRIVACY.md")
-        private val AUTHOR_RESUME_URI = Uri.parse("https://resume.zhanghai.me/")
-        private val AUTHOR_GITHUB_URI = Uri.parse("https://github.com/zhanghai")
+            Uri.parse("https://github.com/LeOS-GSI/FileManager/blob/master/PRIVACY.md")
+        private val AUTHOR_RESUME_URI = Uri.parse("https://leos-gsi.de")
+        private val AUTHOR_GITHUB_URI = Uri.parse("https://github.com/LeOS-GSI")
         private val AUTHOR_GOOGLE_PLUS_URI =
-            Uri.parse("https://plus.google.com/100015937320889992498")
-        private val AUTHOR_TWITTER_URI = Uri.parse("https://twitter.com/zhanghai95")
+            Uri.parse("https://t.me/LeOS_Support")
+        private val AUTHOR_TWITTER_URI = Uri.parse("https://t.me/LeOS_Support")
     }
 }
