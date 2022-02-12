@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2018 Hai Zhang <dreaming.in.code.zh@gmail.com>
+  ~ Copyright (c) 2018 Harvey186 <dreaming.in.code.zh@gmail.com>
   ~ All Rights Reserved.
   -->
 
@@ -17,7 +17,7 @@
     <string name="file_type_name_directory">フォルダ</string>
     <string name="file_type_name_document">%1$s ドキュメント</string>
     <string name="file_type_name_ebook">%1$s 電子書籍</string>
-    <string name="file_type_name_email">%1$s 電子メールメッセージ</string>
+    <string name="file_type_name_email">%1$s メールメッセージ</string>
     <string name="file_type_name_font">%1$s フォント</string>
     <string name="file_type_name_generic">%1$s ファイル</string>
     <string name="file_type_name_image">%1$s 画像</string>

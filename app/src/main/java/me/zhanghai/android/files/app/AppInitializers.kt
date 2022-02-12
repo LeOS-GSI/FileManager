@@ -13,9 +13,9 @@ import com.jakewharton.threetenabp.AndroidThreeTen
 import jcifs.context.SingletonContext
 import me.zhanghai.android.files.BuildConfig
 import me.zhanghai.android.files.coil.initializeCoil
-import me.zhanghai.android.files.compat.RestrictedHiddenApiAccess
 import me.zhanghai.android.files.filejob.fileJobNotificationTemplate
 import me.zhanghai.android.files.ftpserver.ftpServerServiceNotificationTemplate
+import me.zhanghai.android.files.hiddenapi.HiddenApi
 import me.zhanghai.android.files.provider.FileSystemProviders
 import me.zhanghai.android.files.settings.Settings
 import me.zhanghai.android.files.storage.SftpServerAuthenticator
@@ -27,14 +27,20 @@ import me.zhanghai.android.files.provider.sftp.client.Client as SftpClient
 import me.zhanghai.android.files.provider.smb.client.Client as SmbClient
 
 val appInitializers = listOf(
-    ::allowRestrictedHiddenApiAccess, ::initializeThreeTen,
+    ::initializeCrashlytics, ::disableHiddenApiChecks, ::initializeThreeTen,
     ::initializeWebViewDebugging, ::initializeStetho, ::initializeCoil,
     ::initializeFileSystemProviders, ::upgradeApp, ::initializeSettings, ::initializeCustomTheme,
     ::initializeNightMode, ::createNotificationChannels
 )
 
-private fun allowRestrictedHiddenApiAccess() {
-    RestrictedHiddenApiAccess.allow()
+private fun initializeCrashlytics() {
+//#ifdef NONFREE
+    me.zhanghai.android.files.nonfree.CrashlyticsInitializer.initialize()
+//#endif
+}
+
+private fun disableHiddenApiChecks() {
+    HiddenApi.disableHiddenApiChecks()
 }
 
 private fun initializeThreeTen() {

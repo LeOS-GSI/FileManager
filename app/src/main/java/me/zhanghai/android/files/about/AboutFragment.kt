@@ -47,25 +47,16 @@ class AboutFragment : Fragment() {
         binding.authorNameLayout.setOnClickListener {
             startActivitySafe(AUTHOR_RESUME_URI.createViewIntent())
         }
-        binding.authorGitHubLayout.setOnClickListener {
-            startActivitySafe(AUTHOR_GITHUB_URI.createViewIntent())
-        }
-        binding.authorGooglePlusLayout.setOnClickListener {
-            startActivitySafe(AUTHOR_GOOGLE_PLUS_URI.createViewIntent())
-        }
         binding.authorTwitterLayout.setOnClickListener {
             startActivitySafe(AUTHOR_TWITTER_URI.createViewIntent())
         }
     }
 
     companion object {
-        private val GITHUB_URI = Uri.parse("https://github.com/LeOS-GSI/FileManager")
+        private val GITHUB_URI = Uri.parse("https://github.com/LeOS-GSI/LeOS-Files")
         private val PRIVACY_POLICY_URI =
-            Uri.parse("https://github.com/LeOS-GSI/FileManager/blob/master/PRIVACY.md")
-        private val AUTHOR_RESUME_URI = Uri.parse("https://leos-gsi.de")
-        private val AUTHOR_GITHUB_URI = Uri.parse("https://github.com/LeOS-GSI")
-        private val AUTHOR_GOOGLE_PLUS_URI =
-            Uri.parse("https://t.me/LeOS_Support")
+            Uri.parse("https://github.com/LeOS-GSI/LeOS-Files/blob/master/PRIVACY.md")
+        private val AUTHOR_RESUME_URI = Uri.parse("https://leos-gsi.de/")
         private val AUTHOR_TWITTER_URI = Uri.parse("https://t.me/LeOS_Support")
     }
 }

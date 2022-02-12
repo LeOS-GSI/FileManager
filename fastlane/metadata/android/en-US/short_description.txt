@@ -1,1 +1,1 @@
-Open source Material Design file manager for LeOS
+Open source Material Design file manager
