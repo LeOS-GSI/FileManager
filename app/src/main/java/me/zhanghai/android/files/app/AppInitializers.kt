@@ -27,17 +27,12 @@ import me.zhanghai.android.files.provider.sftp.client.Client as SftpClient
 import me.zhanghai.android.files.provider.smb.client.Client as SmbClient
 
 val appInitializers = listOf(
-    ::initializeCrashlytics, ::disableHiddenApiChecks, ::initializeThreeTen,
+    ::disableHiddenApiChecks, ::initializeThreeTen,
     ::initializeWebViewDebugging, ::initializeStetho, ::initializeCoil,
     ::initializeFileSystemProviders, ::upgradeApp, ::initializeSettings, ::initializeCustomTheme,
     ::initializeNightMode, ::createNotificationChannels
 )
 
-private fun initializeCrashlytics() {
-//#ifdef NONFREE
-    me.zhanghai.android.files.nonfree.CrashlyticsInitializer.initialize()
-//#endif
-}
 
 private fun disableHiddenApiChecks() {
     HiddenApi.disableHiddenApiChecks()

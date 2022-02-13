@@ -324,9 +324,6 @@
 
         <receiver android:name="me.zhanghai.android.files.ftpserver.FtpServerReceiver" />
 
-        <meta-data
-            android:name="firebase_crashlytics_collection_enabled"
-            android:value="false" />
 
         <!-- We need to reference the MD3 theme in XML for R8 to keep relevant resources. -->
         <activity
