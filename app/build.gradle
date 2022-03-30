@@ -19,7 +19,7 @@ android {
     ndkVersion '23.1.7779620'
     buildToolsVersion '32.0.0'
     defaultConfig {
-        applicationId 'me.zhanghai.android.files'
+        applicationId 'me.leos.files'
         minSdkVersion 21
         targetSdkVersion 31
         versionCode 26
