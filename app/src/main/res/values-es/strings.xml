@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2018 Harvey186 <dreaming.in.code.zh@gmail.com>
+  ~ Copyright (c) 2018 Hai Zhang <dreaming.in.code.zh@gmail.com>
   ~ All Rights Reserved.
   -->
 
 <resources>
 
-    <string name="app_name">LeOS-Files</string>
+    <string name="app_name">Material Files</string>
 
     <string name="close">Cerrar</string>
     <string name="copy">Copiar</string>
@@ -229,9 +229,6 @@
     <string name="file_name_error_already_exists">Ya existe un archivo con este nombre</string>
     <string name="file_delete_message_file_format">¿Eliminar \"%1$s\"?</string>
     <string name="file_delete_message_directory_format">¿Eliminar carpeta \"%1$s\" y su contenido?</string>
-    <string name="file_delete_message_multiple_files_format">¿Eliminar %1$,d archivos?</string>
-    <string name="file_delete_message_multiple_directories_format">¿Eliminar %1$,d carpetas y sus contenidos?</string>
-    <string name="file_delete_message_multiple_mixed_format">¿Eliminar %1$,d artículos?</string>
     <string name="file_create_archive_title">Crear archivo</string>
     <string name="file_create_archive_type_zip">.zip</string>
     <string name="file_create_archive_type_tar_xz">.tar.xz</string>
@@ -542,8 +539,7 @@
     </plurals>
     <string-array name="settings_root_strategy_entries">
         <item>Sólo acceso normal</item>
-        <item>Preferir acceso normal</item>
-        <item>Preferir acceso administrativo</item>
+        <item>Automatic</item>
         <item>Sólo acceso administrativo</item>
     </string-array>
     <string name="settings_archive_file_name_encoding_title">Codificación del nombre de archivo</string>
@@ -563,8 +559,8 @@
     <string name="about_licenses_title">Licencias</string>
     <string name="about_privacy_policy_title">Política de privacidad</string>
     <string name="about_author_title">Autor</string>
-    <string name="about_author_name_title">Harvey186</string>
+    <string name="about_author_name_title">Hai Zhang</string>
     <string name="about_author_github_title">Seguir en GitHub</string>
     <string name="about_author_google_plus_title">Agregar a círculos de Google+</string>
-    <string name="about_author_twitter_title">Seguir en Telegram</string>
+    <string name="about_author_twitter_title">Seguir en Twitter</string>
 </resources>

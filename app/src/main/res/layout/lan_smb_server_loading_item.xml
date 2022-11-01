@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2021 Harvey186 <dreaming.in.code.zh@gmail.com>
+  ~ Copyright (c) 2021 Hai Zhang <dreaming.in.code.zh@gmail.com>
   ~ All Rights Reserved.
   -->
 
@@ -16,5 +16,5 @@
     android:gravity="center_vertical"
     android:maxLines="1"
     android:text="@string/storage_add_lan_smb_server_loading"
-    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+    android:textAppearance="?textAppearanceListItemSecondary"
     android:textColor="?android:textColorSecondary" />

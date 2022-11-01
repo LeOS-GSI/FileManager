@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2018 Harvey186 <dreaming.in.code.zh@gmail.com>
+  ~ Copyright (c) 2018 Hai Zhang <dreaming.in.code.zh@gmail.com>
   ~ All Rights Reserved.
   -->
 
@@ -9,7 +9,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="ImpliedQuantity">
 
-    <string name="app_name">LeOS-Files</string>
+    <string name="app_name">Material Files</string>
 
     <string name="close">Fechar</string>
     <string name="copy">Copiar</string>
@@ -231,9 +231,6 @@
     <string name="file_name_error_already_exists">Um arquivo com esse nome já existe</string>
     <string name="file_delete_message_file_format">Excluir \"%1$s\"?</string>
     <string name="file_delete_message_directory_format">Excluir a pasta \"%1$s\" e seu conteúdo?</string>
-    <string name="file_delete_message_multiple_files_format">Excluir %1$,d arquivos?</string>
-    <string name="file_delete_message_multiple_directories_format">Excluir %1$,d pastas e seus conteúdos?</string>
-    <string name="file_delete_message_multiple_mixed_format">Excluir %1$,d itens?</string>
     <string name="file_create_archive_title">Criar arquivo</string>
     <string name="file_create_archive_type_zip">.zip</string>
     <string name="file_create_archive_type_tar_xz">.tar.xz</string>
@@ -544,8 +541,7 @@
     </plurals>
     <string-array name="settings_root_strategy_entries">
         <item>Apenas acesso normal</item>
-        <item>Preferir acesso normal</item>
-        <item>Preferir acesso root</item>
+        <item>Automatic</item>
         <item>Apenas acesso root</item>
     </string-array>
     <string name="settings_archive_file_name_encoding_title">Codificação do nome do arquivo</string>
@@ -565,8 +561,8 @@
     <string name="about_licenses_title">Licenças</string>
     <string name="about_privacy_policy_title">Política de privacidade</string>
     <string name="about_author_title">Autor</string>
-    <string name="about_author_name_title">Harvey186</string>
+    <string name="about_author_name_title">Hai Zhang</string>
     <string name="about_author_github_title">Siga no GitHub</string>
     <string name="about_author_google_plus_title">Adicione aos círculos do Google+</string>
-    <string name="about_author_twitter_title">Siga no Telegram</string>
+    <string name="about_author_twitter_title">Siga no Twitter</string>
 </resources>

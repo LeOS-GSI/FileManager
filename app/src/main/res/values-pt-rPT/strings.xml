@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2018 Harvey186 <dreaming.in.code.zh@gmail.com>
+  ~ Copyright (c) 2018 Hai Zhang <dreaming.in.code.zh@gmail.com>
   ~ All Rights Reserved.
   -->
 
@@ -9,7 +9,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="ImpliedQuantity">
 
-    <string name="app_name">LeOS-Files</string>
+    <string name="app_name">Material Files</string>
 
     <string name="close">Fechar</string>
     <string name="copy">Copiar</string>
@@ -57,8 +57,8 @@
         <item quantity="other">%1$,d bytes</item>
     </plurals>
 
-    <string name="storage_permission_rationale_message">A aplicação precisa da permissão para aceder aos ficheiros. Clique em \"PERMITIR\" na próxima caixa de diálogo.</string>
-    <string name="storage_permission_permanently_denied_message">A aplicação precisa da permissão para aceder aos ficheiros. Por favor, conceda a permissão de \"Armazenamento\" nas definições de sistema.</string>
+    <string name="storage_permission_rationale_message">A aplicação precisa da permissão para aceder aos ficheiros. Clique em “PERMITIR” na próxima caixa de diálogo.</string>
+    <string name="storage_permission_permanently_denied_message">A aplicação precisa da permissão para aceder aos ficheiros. Por favor, conceda a permissão de “Armazenamento” nas definições de sistema.</string>
     <string name="notification_channel_background_activity_start_name">Ações em segundo plano</string>
     <string name="notification_channel_background_activity_start_description">Executar ações se a aplicação estiver em segundo plano</string>
     <string name="notification_channel_file_job_name">Operações de ficheiro</string>
@@ -171,7 +171,7 @@
     <string name="file_job_cannot_move_over_itself_title">Não é possível mover um ficheiro para si mesmo</string>
     <string name="file_job_cannot_copy_move_over_itself_message">O ficheiro de origem seria substituído pelo de destino. </string>
     <string name="file_job_replace_title_format">Substituir ficheiro “%1$s”?</string>
-    <string name="file_job_replace_message_format">Já existe um ficheiro com este nome em \"%1$s\".\nSe o substituir perde o conteúdo do ficheiro existente.</string>
+    <string name="file_job_replace_message_format">Já existe um ficheiro com este nome em “%1$s”.\nSe o substituir perde o conteúdo do ficheiro existente.</string>
     <string name="file_job_replace_target_name">Ficheiro original</string>
     <string name="file_job_replace_source_name">Substituir por</string>
     <string name="file_job_merge_title_format">Juntar pasta “%1$s”?</string>
@@ -207,7 +207,7 @@
     <string name="file_job_write_error_title">Erro ao escrever</string>
     <string name="file_job_write_error_message_format">Ocorreu um erro ao escrever “%1$s”.\n%2$s</string>
     <string name="file_job_get_information_error_message_format">Ocorreu um erro ao obter informação de “%1$s”.</string>
-    <string name="file_job_remount_format">Remontar \"%1$s\" como apenas leitura</string>
+    <string name="file_job_remount_format">Remontar “%1$s” como apenas leitura</string>
     <string name="file_job_remount_loading_format">A remontar “%1$s” como apenas leitura…</string>
     <string name="file_job_remount_success_format">“%1$s” foi remontado como apenas leitura</string>
     <string name="file_job_action_all">Aplicar esta ação para todos os ficheiros</string>
@@ -230,9 +230,6 @@
     <string name="file_name_error_already_exists">Já existe um ficheiro com este nome</string>
     <string name="file_delete_message_file_format">Eliminar “%1$s”?</string>
     <string name="file_delete_message_directory_format">Eliminar a pasta “%1$s” e todo o seu conteúdo?</string>
-    <string name="file_delete_message_multiple_files_format">Eliminar %1$,d ficheiros?</string>
-    <string name="file_delete_message_multiple_directories_format">Eliminar %1$,d pastas e todo o seu conteúdo?</string>
-    <string name="file_delete_message_multiple_mixed_format">Eliminar %1$,d itens?</string>
     <string name="file_create_archive_title">Criar arquivo</string>
     <string name="file_create_archive_type_zip">.zip</string>
     <string name="file_create_archive_type_tar_xz">.tar.xz</string>
@@ -337,7 +334,7 @@
         <item>Definir GID</item>
         <item>Bit fixo</item>
     </string-array>
-    <string name="file_properties_permissions_set_mode_uppercase_x">Não adicionar \"Execução\" a ficheiros anexados</string>
+    <string name="file_properties_permissions_set_mode_uppercase_x">Não adicionar “Execução” a ficheiros anexados</string>
     <string name="file_properties_permissions_selinux_context">Contexto SELinux</string>
     <string name="file_properties_permissions_set_selinux_context_title">Alterar contexto SELinux</string>
     <string name="file_properties_permissions_set_selinux_context_restore">Restaurar</string>
@@ -514,8 +511,7 @@
     </plurals>
     <string-array name="settings_root_strategy_entries">
         <item>Apenas acesso normal</item>
-        <item>Preferir acesso normal</item>
-        <item>Preferir acesso root</item>
+        <item>Automatic</item>
         <item>Apenas acesso root</item>
     </string-array>
     <string name="settings_archive_file_name_encoding_title">Codificação para o nome do arquivo</string>
@@ -533,8 +529,8 @@
     <string name="about_licenses_title">Licenças</string>
     <string name="about_privacy_policy_title">Política de privacidade</string>
     <string name="about_author_title">Autor</string>
-    <string name="about_author_name_title">Harvey186</string>
+    <string name="about_author_name_title">Hai Zhang</string>
     <string name="about_author_github_title">Seguir em GitHub</string>
     <string name="about_author_google_plus_title">Adicionar aos círculos Google+</string>
-    <string name="about_author_twitter_title">Seguir em Telegram</string>
+    <string name="about_author_twitter_title">Seguir em Twitter</string>
 </resources>

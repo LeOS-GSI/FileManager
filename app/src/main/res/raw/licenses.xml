@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2018 Harvey186 <dreaming.in.code.zh@gmail.com>
+  ~ Copyright (c) 2018 Hai Zhang <dreaming.in.code.zh@gmail.com>
   ~ All Rights Reserved.
   -->
 
@@ -39,6 +39,13 @@
         <name>PhotoView</name>
         <url>https://github.com/chrisbanes/PhotoView</url>
         <copyright>Copyright 2011, 2012 Chris Banes</copyright>
+        <license>Apache Software License 2.0</license>
+    </notice>
+
+    <notice>
+        <name>libsu</name>
+        <url>https://github.com/topjohnwu/libsu</url>
+        <copyright>Copyright 2021 John "topjohnwu" Wu</copyright>
         <license>Apache Software License 2.0</license>
     </notice>
 
@@ -85,9 +92,9 @@
     </notice>
 
     <notice>
-        <name>libsu</name>
-        <url>https://github.com/topjohnwu/libsu</url>
-        <copyright>Copyright 2021 John "topjohnwu" Wu</copyright>
+        <name>Apache Commons Net</name>
+        <url>https://commons.apache.org/proper/commons-net/</url>
+        <copyright>Copyright 2003 The Apache Software Foundation</copyright>
         <license>Apache Software License 2.0</license>
     </notice>
 
@@ -150,21 +157,21 @@
     <notice>
         <name>libselinux-android</name>
         <url>https://github.com/zhanghai/libselinux-android</url>
-        <copyright>Copyright 2019 Harvey186</copyright>
+        <copyright>Copyright 2019 Hai Zhang</copyright>
         <license>Apache Software License 2.0</license>
     </notice>
 
     <notice>
         <name>AndroidRetroFile</name>
         <url>https://github.com/zhanghai/AndroidRetroFile</url>
-        <copyright>Copyright 2018 Harvey186</copyright>
+        <copyright>Copyright 2018 Hai Zhang</copyright>
         <license>GNU General Public License 2.0</license>
     </notice>
 
     <notice>
         <name>SystemUiHelper</name>
         <url>https://github.com/zhanghai/SystemUiHelper</url>
-        <copyright>Copyright 2015 Harvey186</copyright>
+        <copyright>Copyright 2015 Hai Zhang</copyright>
         <license>Apache Software License 2.0</license>
     </notice>
 

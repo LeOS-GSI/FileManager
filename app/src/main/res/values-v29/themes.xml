@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2019 Harvey186 <dreaming.in.code.zh@gmail.com>
+  ~ Copyright (c) 2019 Hai Zhang <dreaming.in.code.zh@gmail.com>
   ~ All Rights Reserved.
   -->
 
 <resources>
 
-    <style name="Platform.V29.Theme.MaterialFiles" parent="Platform.V27.Theme.MaterialFiles">
+    <style name="Platform.V29.Theme.MaterialFiles" parent="Platform.V28.Theme.MaterialFiles">
         <item name="android:forceDarkAllowed">false</item>
 
         <item name="colorPrimaryDark">@android:color/transparent</item>

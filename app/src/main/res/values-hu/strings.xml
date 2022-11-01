@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2018 Harvey186 <dreaming.in.code.zh@gmail.com>
+  ~ Copyright (c) 2018 Hai Zhang <dreaming.in.code.zh@gmail.com>
   ~ All Rights Reserved.
   -->
 
 <resources>
 
-    <string name="app_name">LeOS-Files</string>
+    <string name="app_name">Material Files</string>
 
     <string name="close">Bezárás</string>
     <string name="copy">Másolás</string>
@@ -229,9 +229,6 @@
     <string name="file_name_error_already_exists">Már létezik egy fájl ezzel a névvel</string>
     <string name="file_delete_message_file_format">Törli a(z) „%1$s” fájlt?</string>
     <string name="file_delete_message_directory_format">Törli a(z) „%1$s” mappát és a tartalmát?</string>
-    <string name="file_delete_message_multiple_files_format">Töröl %1$,d fájlt?</string>
-    <string name="file_delete_message_multiple_directories_format">Töröl %1$,d mappát és azok tartalmát?</string>
-    <string name="file_delete_message_multiple_mixed_format">Töröl %1$,d elemet?</string>
     <string name="file_create_archive_title">Archívum létrehozása</string>
     <string name="file_create_archive_type_zip">.zip</string>
     <string name="file_create_archive_type_tar_xz">.tar.xz</string>
@@ -542,8 +539,7 @@
     </plurals>
     <string-array name="settings_root_strategy_entries">
         <item>Csak normál hozzáférés</item>
-        <item>Normál hozzáférés előnyben részesítése</item>
-        <item>Root hozzáférés előnyben részesítése</item>
+        <item>Automatic</item>
         <item>Csak root hozzéférés</item>
     </string-array>
     <string name="settings_archive_file_name_encoding_title">Archívum fájlnévkódolása</string>
@@ -563,8 +559,8 @@
     <string name="about_licenses_title">Licencek</string>
     <string name="about_privacy_policy_title">Adatvédelmi nyilatkozat</string>
     <string name="about_author_title">Szerző</string>
-    <string name="about_author_name_title">Harvey186</string>
+    <string name="about_author_name_title">Hai Zhang</string>
     <string name="about_author_github_title">Követés a GitHubon</string>
     <string name="about_author_google_plus_title">Hozzáadás a Google+ körökhöz</string>
-    <string name="about_author_twitter_title">Követés Telegramen</string>
+    <string name="about_author_twitter_title">Követés Twitteren</string>
 </resources>

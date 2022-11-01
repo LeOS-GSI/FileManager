@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2021 Harvey186 <dreaming.in.code.zh@gmail.com>
+  ~ Copyright (c) 2021 Hai Zhang <dreaming.in.code.zh@gmail.com>
   ~ All Rights Reserved.
   -->
 
@@ -23,19 +23,19 @@
         android:id="@+id/labelText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="?textAppearanceListItemSecondary" />
 
     <TextView
         android:id="@+id/nameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textAppearance="?textAppearanceListItemSecondary"
         android:textColor="?android:textColorSecondary" />
 
     <me.zhanghai.android.files.ui.AutoGoneTextView
         android:id="@+id/descriptionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textAppearance="?textAppearanceListItemSecondary"
         android:textColor="?android:textColorSecondary" />
 </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>

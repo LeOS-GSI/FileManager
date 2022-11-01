@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2018 Harvey186 <dreaming.in.code.zh@gmail.com>
+  ~ Copyright (c) 2018 Hai Zhang <dreaming.in.code.zh@gmail.com>
   ~ All Rights Reserved.
   -->
 
@@ -65,6 +65,12 @@
         android:id="@+id/action_navigate_up"
         android:orderInCategory="100"
         android:title="@string/file_list_action_navigate_up"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_navigate_to"
+        android:orderInCategory="100"
+        android:title="@string/file_list_action_navigate_to"
         app:showAsAction="never" />
 
     <item

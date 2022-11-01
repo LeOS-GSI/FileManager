@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2020 Harvey186 <dreaming.in.code.zh@gmail.com>
+  ~ Copyright (c) 2020 Hai Zhang <dreaming.in.code.zh@gmail.com>
   ~ All Rights Reserved.
   -->
 
@@ -15,4 +15,4 @@
     android:ellipsize="end"
     android:gravity="center_vertical"
     android:maxLines="1"
-    android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+    android:textAppearance="?textAppearanceListItem" />

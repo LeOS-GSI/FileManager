@@ -7,8 +7,7 @@
 
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="me.zhanghai.android.files">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-feature android:name="android.hardware.wifi" android:required="false" />
 
@@ -19,6 +18,9 @@
     <uses-permission
         android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission
@@ -65,11 +67,9 @@
                 <data android:mimeType="vnd.android.document/directory" />
             </intent-filter>
             <!-- @see me.zhanghai.android.files.file.isSupportedArchive -->
-            <!--
-              ~ We don't really support content URI archives.
-              ~ TODO: Figure out a good way to allow choosing this activity only in our app, or
-              ~ support content URI archives.
-            <intent-filter tools:ignore="AppLinkUrlError">
+            <intent-filter
+                android:label="@string/archive_viewer_title"
+                tools:ignore="AppLinkUrlError">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="application/gzip" />
@@ -78,7 +78,6 @@
                 <data android:mimeType="application/zip" />
                 <data android:mimeType="application/vnd.android.package-archive" />
                 <data android:mimeType="application/vnd.debian.binary-package" />
-                <data android:mimeType="application/x-7z-compressed" />
                 <data android:mimeType="application/x-bzip2" />
                 <data android:mimeType="application/x-compress" />
                 <data android:mimeType="application/x-cpio" />
@@ -90,8 +89,8 @@
                 <data android:mimeType="application/x-lzma" />
                 <data android:mimeType="application/x-tar" />
                 <data android:mimeType="application/x-xz" />
+                <data android:mimeType="@string/intent_filter_data_seven_z_mime_type" />
             </intent-filter>
-            -->
             <!-- @see https://android.googlesource.com/platform/packages/apps/DocumentsUI/+/master/AndroidManifest.xml -->
             <intent-filter>
                 <action android:name="android.intent.action.OPEN_DOCUMENT" />
@@ -180,6 +179,11 @@
             android:name="me.zhanghai.android.files.storage.EditDocumentTreeDialogActivity"
             android:label="@string/storage_edit_document_tree_title"
             android:theme="@style/Theme.MaterialFiles.Translucent" />
+
+        <activity
+            android:name="me.zhanghai.android.files.storage.EditFtpServerActivity"
+            android:label="@string/storage_edit_ftp_server_title_edit"
+            android:theme="@style/Theme.MaterialFiles" />
 
         <activity
             android:name="me.zhanghai.android.files.storage.EditSftpServerActivity"
@@ -307,6 +311,9 @@
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
         </service>
 
         <provider
@@ -324,11 +331,8 @@
 
         <receiver android:name="me.zhanghai.android.files.ftpserver.FtpServerReceiver" />
 
-
-        <!-- We need to reference the MD3 theme in XML for R8 to keep relevant resources. -->
-        <activity
-            android:name=".KeepMd3Resources"
-            android:theme="@style/Theme.MaterialFiles.Md3"
-            tools:ignore="MissingClass" />
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="false" />
     </application>
 </manifest>
