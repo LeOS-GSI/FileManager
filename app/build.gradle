@@ -18,7 +18,7 @@ android {
     ndkVersion '25.1.8937393'
     buildToolsVersion '33.0.0'
     defaultConfig {
-        applicationId 'me.zhanghai.android.files'
+        applicationId 'me.leos.files'
         minSdkVersion 21
         // Not supporting notification runtime permission yet.
         //noinspection OldTargetApi
