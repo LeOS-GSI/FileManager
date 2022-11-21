@@ -11,6 +11,7 @@ kapt {
 }
 apply plugin: 'kotlin-parcelize'
 
+apply from: '../signing.gradle'
 
 android {
     namespace 'me.zhanghai.android.files'
