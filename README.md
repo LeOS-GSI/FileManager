@@ -23,7 +23,7 @@ Material Design file manager for LeOS-GSI
 
 ## License
 
-    Copyleft (C) 2022 harvey186
+    Copyleft (C) 2023 harvey186
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
