@@ -12,9 +12,9 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
-import coil.dispose
-import coil.load
-import coil.size.Size
+import coil.clear
+import coil.loadAny
+import coil.size.OriginalSize
 import com.davemorrissey.labs.subscaleview.ImageSource
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView.DefaultOnImageEventListener
@@ -63,7 +63,7 @@ class ImageViewerAdapter(
         super.onViewRecycled(holder)
 
         val binding = holder.binding
-        binding.image.dispose()
+        binding.image.clear()
         binding.largeImage.recycle()
     }
 
@@ -103,12 +103,12 @@ class ImageViewerAdapter(
         if (!imageInfo.shouldUseLargeImageView) {
             binding.image.apply {
                 isVisible = true
-                load(path to imageInfo.attributes) {
-                    size(Size.ORIGINAL)
+                loadAny(path to imageInfo.attributes) {
+                    size(OriginalSize)
                     fadeIn(context.shortAnimTime)
                     listener(
                         onSuccess = { _, _ -> binding.progress.fadeOutUnsafe() },
-                        onError = { _, result -> showError(binding, result.throwable) }
+                        onError = { _, e -> showError(binding, e) }
                     )
                 }
             }

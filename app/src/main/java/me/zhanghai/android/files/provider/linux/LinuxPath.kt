@@ -14,7 +14,6 @@ import java8.nio.file.ProviderMismatchException
 import java8.nio.file.WatchEvent
 import java8.nio.file.WatchKey
 import java8.nio.file.WatchService
-import me.zhanghai.android.files.app.application
 import me.zhanghai.android.files.compat.isPrimaryCompat
 import me.zhanghai.android.files.compat.pathFileCompat
 import me.zhanghai.android.files.provider.common.ByteString
@@ -83,43 +82,27 @@ internal class LinuxPath : ByteStringListPath<LinuxPath>, RootablePath {
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R && !it.isPrimaryCompat) {
                 return@none false
             }
-            val storageVolumeDirectory = it.pathFileCompat
-            if (!file.startsWith(storageVolumeDirectory)) {
+            val storageVolumeFile = it.pathFileCompat
+            if (!file.startsWith(storageVolumeFile)) {
                 return@none false
             }
-            return@none file.isAccessibleInStorageVolume(storageVolumeDirectory, isAttributeAccess)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                fun File.startsWithAndroidDataOrObb() =
+                    startsWith(storageVolumeFile.resolve(FILE_ANDROID_DATA))
+                        || startsWith(storageVolumeFile.resolve(FILE_ANDROID_OBB))
+                if (isAttributeAccess) {
+                    val parentFile = file.parentFile
+                    if (parentFile != null && parentFile.startsWithAndroidDataOrObb()) {
+                        return@none false
+                    }
+                } else {
+                    if (file.startsWithAndroidDataOrObb()) {
+                        return@none false
+                    }
+                }
+            }
+            return@none true
         }
-    }
-
-    private fun File.isAccessibleInStorageVolume(
-        storageVolumeDirectory: File,
-        isAttributeAccess: Boolean
-    ): Boolean {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            val parentDirectory = parentFile
-            val androidDataDirectory = storageVolumeDirectory.resolve(FILE_ANDROID_DATA)
-            val isInAndroidDataDirectory = if (isAttributeAccess && parentDirectory != null) {
-                parentDirectory.startsWith(androidDataDirectory)
-            } else {
-                startsWith(androidDataDirectory)
-            }
-            val appPackageName = application.packageName
-            if (isInAndroidDataDirectory) {
-                val appDataDirectory = androidDataDirectory.resolve(appPackageName)
-                return startsWith(appDataDirectory)
-            }
-            val androidObbDirectory = storageVolumeDirectory.resolve(FILE_ANDROID_OBB)
-            val isInAndroidObbDirectory = if (isAttributeAccess && parentDirectory != null) {
-                parentDirectory.startsWith(androidObbDirectory)
-            } else {
-                startsWith(androidObbDirectory)
-            }
-            if (isInAndroidObbDirectory) {
-                val appObbDirectory = androidObbDirectory.resolve(appPackageName)
-                return startsWith(appObbDirectory)
-            }
-        }
-        return true
     }
 
     private constructor(source: Parcel) : super(source) {

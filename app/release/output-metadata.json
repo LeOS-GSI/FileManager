@@ -4,15 +4,15 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "me.leos.files",
+  "applicationId": "me.leos.android.files",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 1,
-      "versionName": "A13",
+      "versionCode": 30,
+      "versionName": "1.5.1",
       "outputFile": "app-release.apk"
     }
   ],

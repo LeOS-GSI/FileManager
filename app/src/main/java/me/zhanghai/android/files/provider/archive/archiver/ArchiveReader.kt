@@ -17,8 +17,6 @@ import java8.nio.file.Path
 import me.zhanghai.android.files.R
 import me.zhanghai.android.files.compat.toJavaSeekableByteChannel
 import me.zhanghai.android.files.compat.use
-//#ifdef NONFREE
-//#endif
 import me.zhanghai.android.files.provider.common.DelegateForceableSeekableByteChannel
 import me.zhanghai.android.files.provider.common.DelegateInputStream
 import me.zhanghai.android.files.provider.common.DelegateNonForceableSeekableByteChannel
@@ -144,7 +142,6 @@ object ArchiveReader {
                     }
                     return SevenZFile::class.create(file).use { it.entries.toList() }
                 }
-
                 // Unnecessary, but teaches lint that compressorType != null below might be false.
                 else -> {}
             }
@@ -277,7 +274,6 @@ object ArchiveReader {
                         }
                     }
                 }
-
                 // Unnecessary, but teaches lint that compressorType != null below might be false.
                 else -> {}
             }
@@ -326,7 +322,6 @@ object ArchiveReader {
 
     @Throws(ApacheArchiveException::class)
     private fun detectArchiveType(inputStream: InputStream): String =
-
         ArchiveStreamFactory.detect(inputStream)
 
     private fun KClass<ZipFileCompat>.isSupported(file: Path): Boolean =

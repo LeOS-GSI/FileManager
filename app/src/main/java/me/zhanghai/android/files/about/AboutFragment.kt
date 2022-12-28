@@ -38,12 +38,6 @@ class AboutFragment : Fragment() {
         activity.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.gitHubLayout.setOnClickListener { startActivitySafe(GITHUB_URI.createViewIntent()) }
         binding.licensesLayout.setOnClickListener { LicensesDialogFragment.show(this) }
-//#ifdef NONFREE
-        binding.privacyPolicyLayout.isVisible = true
-        binding.privacyPolicyLayout.setOnClickListener {
-            startActivitySafe(PRIVACY_POLICY_URI.createViewIntent())
-        }
-//#endif
         binding.authorNameLayout.setOnClickListener {
             startActivitySafe(AUTHOR_RESUME_URI.createViewIntent())
         }
@@ -53,9 +47,7 @@ class AboutFragment : Fragment() {
         binding.authorGooglePlusLayout.setOnClickListener {
             startActivitySafe(AUTHOR_GOOGLE_PLUS_URI.createViewIntent())
         }
-
     }
-
     companion object {
         private val GITHUB_URI = Uri.parse("https://github.com/LeOS-GSI/LeOS-Files")
         private val PRIVACY_POLICY_URI =

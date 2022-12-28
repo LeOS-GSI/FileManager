@@ -321,8 +321,7 @@ fun Path.readSymbolicLinkByteString(): ByteString {
 fun Path.resolveForeign(other: Path): Path {
     asByteStringListPath()
     other.asByteStringListPath()
-    if (javaClass == other.javaClass && provider == other.provider
-        && fileSystem == other.fileSystem) {
+    if (provider == other.provider) {
         return resolve(other)
     }
     if (other.isAbsolute) {
@@ -331,6 +330,9 @@ fun Path.resolveForeign(other: Path): Path {
     if (other.isEmpty) {
         return this
     }
+    // TODO: kotlinc: None of the following functions can be called with the arguments supplied:
+    //  public abstract fun resolve(p0: Path!): Path! defined in java8.nio.file.Path
+    //  public abstract fun resolve(p0: String!): Path! defined in java8.nio.file.Path
     var result: ByteStringListPath<*> = this
     for (name in other.nameByteStrings) {
         result = result.resolve(name)
