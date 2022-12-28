@@ -5,7 +5,6 @@
 
 package me.zhanghai.android.files.provider.archive.archiver
 
-
 import org.apache.commons.compress.compressors.CompressorException
 import java.io.IOException
 import org.apache.commons.compress.archivers.ArchiveException as ApacheArchiveException
@@ -14,6 +13,5 @@ class ArchiveException : IOException {
     constructor(cause: ApacheArchiveException) : super(cause)
 
     constructor(cause: CompressorException) : super(cause)
-
 
 }

@@ -9,7 +9,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="ImpliedQuantity">
 
-    <string name="app_name">LeOS-Files</string>
+    <string name="app_name">LeOS Files</string>
 
     <string name="close">Закрыть</string>
     <string name="copy">Копировать</string>

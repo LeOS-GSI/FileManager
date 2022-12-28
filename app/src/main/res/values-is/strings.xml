@@ -9,7 +9,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="ImpliedQuantity">
 
-    <string name="app_name">Material-skrár</string>
+    <string name="app_name">LeOS-skrár</string>
 
     <string name="close">Loka</string>
     <string name="copy">Afrita</string>

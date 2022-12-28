@@ -91,8 +91,7 @@ abstract class ByteStringListPath<T : ByteStringListPath<T>> : AbstractPath<T>, 
         if (this === other) {
             return true
         }
-        if (javaClass != other.javaClass || provider != other.provider
-            || fileSystem != other.fileSystem) {
+        if (other.javaClass != javaClass) {
             return false
         }
         other as ByteStringListPath<*>
@@ -105,8 +104,7 @@ abstract class ByteStringListPath<T : ByteStringListPath<T>> : AbstractPath<T>, 
         if (this === other) {
             return true
         }
-        if (javaClass != other.javaClass || provider != other.provider
-            || fileSystem != other.fileSystem) {
+        if (javaClass != other.javaClass) {
             return false
         }
         other as ByteStringListPath<*>
@@ -144,14 +142,8 @@ abstract class ByteStringListPath<T : ByteStringListPath<T>> : AbstractPath<T>, 
     }
 
     override fun resolve(other: Path): T {
-        if (javaClass != other.javaClass || provider != other.provider) {
-            throw ProviderMismatchException(other.toString())
-        }
         @Suppress("UNCHECKED_CAST")
-        other as T
-        require(fileSystem == other.fileSystem) {
-            "The other path must have the same file system as this path"
-        }
+        other as? T ?: throw ProviderMismatchException(other.toString())
         if (other.isAbsolute) {
             return other
         }
@@ -171,15 +163,9 @@ abstract class ByteStringListPath<T : ByteStringListPath<T>> : AbstractPath<T>, 
     fun resolveSibling(other: ByteString): T = resolveSibling(createPath(other))
 
     override fun relativize(other: Path): T {
-        if (javaClass != other.javaClass || provider != other.provider) {
-            throw ProviderMismatchException(other.toString())
-        }
         @Suppress("UNCHECKED_CAST")
-        other as T
-        require(fileSystem == other.fileSystem) {
-            "The other path must have the same file system as this path"
-        }
-        require(isAbsolute == other.isAbsolute) {
+        other as? T ?: throw ProviderMismatchException(other.toString())
+        require(other.isAbsolute == isAbsolute) {
             "The other path must be as absolute as this path"
         }
         if (isEmpty) {
@@ -259,12 +245,7 @@ abstract class ByteStringListPath<T : ByteStringListPath<T>> : AbstractPath<T>, 
     override fun hashCode(): Int = hash(separator, segments, isAbsolute, fileSystem)
 
     override fun compareTo(other: Path): Int {
-        javaClass.cast(other)
-        @Suppress("UNCHECKED_CAST")
-        other as T
-        if (provider != other.provider) {
-            throw ClassCastException(other.toString())
-        }
+        other as? ByteStringListPath<*> ?: throw ProviderMismatchException(other.toString())
         return toByteString().compareTo(other.toByteString())
     }
 

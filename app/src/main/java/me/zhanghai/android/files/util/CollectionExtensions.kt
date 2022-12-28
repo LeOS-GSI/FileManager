@@ -31,8 +31,7 @@ fun <T : Enum<T>> enumSetOf(first: T, vararg rest: T): EnumSet<T> = EnumSet.of(f
 
 fun <T> Iterable<T>.toLinkedSet(): LinkedHashSet<T> = toCollection(LinkedHashSet())
 
-inline fun <reified T : Enum<T>> Collection<T>.toEnumSet(): EnumSet<T> =
-    if (isNotEmpty()) EnumSet.copyOf(this) else EnumSet.noneOf(T::class.java)
+fun <T : Enum<T>> Collection<T>.toEnumSet(): EnumSet<T> = EnumSet.copyOf(this)
 
 fun <T : Collection<*>> T.takeIfNotEmpty(): T? = if (isNotEmpty()) this else null
 

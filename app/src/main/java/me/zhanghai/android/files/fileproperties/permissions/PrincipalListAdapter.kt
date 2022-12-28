@@ -9,8 +9,6 @@ import android.view.ViewGroup
 import androidx.annotation.DrawableRes
 import androidx.recyclerview.widget.RecyclerView
 import coil.clear
-import coil.dispose
-import coil.load
 import coil.loadAny
 import me.zhanghai.android.files.R
 import me.zhanghai.android.files.coil.ignoreError
@@ -48,12 +46,12 @@ abstract class PrincipalListAdapter(
         val icon = binding.iconImage.context.getDrawableCompat(principalIconRes)
         val applicationInfo = principal.applicationInfos.firstOrNull()
         if (applicationInfo != null) {
-            binding.iconImage.load(applicationInfo) {
+            binding.iconImage.loadAny(applicationInfo) {
                 placeholder(icon)
                 ignoreError()
             }
         } else {
-            binding.iconImage.dispose()
+            binding.iconImage.clear()
             binding.iconImage.setImageDrawable(icon)
         }
         binding.principalText.text = if (principal.name != null) {

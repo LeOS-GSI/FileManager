@@ -37,8 +37,6 @@ val appInitializers = listOf(
 )
 
 private fun initializeCrashlytics() {
-//#ifdef NONFREE
-//#endif
 }
 
 private fun disableHiddenApiChecks() {
