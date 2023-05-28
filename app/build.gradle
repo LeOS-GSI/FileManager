@@ -9,20 +9,7 @@ apply plugin: 'kotlin-parcelize'
 
 apply from: '../signing.gradle'
 
-//#ifdef NONFREE
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.google.gms:google-services:4.3.15'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.5'
-    }
-}
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.google.firebase.crashlytics'
-//#endif
+
 
 android {
     namespace 'me.zhanghai.android.files'
@@ -30,7 +17,7 @@ android {
     ndkVersion '25.2.9519653'
     buildToolsVersion '33.0.2'
     defaultConfig {
-        applicationId 'me.zhanghai.android.files'
+        applicationId 'me.leos.android.files'
         minSdkVersion 21
         // Not supporting notification runtime permission yet.
         //noinspection OldTargetApi
@@ -65,11 +52,6 @@ android {
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
-//#ifdef NONFREE
-            firebaseCrashlytics {
-                nativeSymbolUploadEnabled true
-            }
-//#endif
         }
     }
     packagingOptions {
