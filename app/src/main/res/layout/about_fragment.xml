@@ -301,7 +301,7 @@
                         </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
 
                         <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
-                            android:id="@+id/authorGooglePlusLayout"
+                            android:id="@+id/authorTwitterLayout"
                             android:layout_width="match_parent"
                             android:layout_height="?listPreferredItemHeightSmall"
                             android:paddingStart="?android:listPreferredItemPaddingStart"

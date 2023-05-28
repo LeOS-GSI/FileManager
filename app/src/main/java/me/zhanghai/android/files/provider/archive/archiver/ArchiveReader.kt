@@ -16,7 +16,10 @@ import java8.nio.file.NotLinkException
 import java8.nio.file.Path
 import me.zhanghai.android.files.R
 import me.zhanghai.android.files.compat.toJavaSeekableByteChannel
-import me.zhanghai.android.files.compat.use
+//#ifdef NONFREE
+import me.zhanghai.android.files.nonfree.RarArchiveEntry
+import me.zhanghai.android.files.nonfree.RarFile
+//#endif
 import me.zhanghai.android.files.provider.common.DelegateForceableSeekableByteChannel
 import me.zhanghai.android.files.provider.common.DelegateInputStream
 import me.zhanghai.android.files.provider.common.DelegateNonForceableSeekableByteChannel
@@ -142,6 +145,10 @@ object ArchiveReader {
                     }
                     return SevenZFile::class.create(file).use { it.entries.toList() }
                 }
+                //#ifdef NONFREE
+                archiveType == RarFile.RAR ->
+                    return RarFile.create(file, encoding).use { it.entries.toList() }
+                //#endif
                 // Unnecessary, but teaches lint that compressorType != null below might be false.
                 else -> {}
             }
@@ -274,6 +281,30 @@ object ArchiveReader {
                         }
                     }
                 }
+//#ifdef NONFREE
+                entry is RarArchiveEntry -> {
+                    var successful = false
+                    var rarFile: RarFile? = null
+                    return try {
+                        rarFile = RarFile.create(file, encoding)
+                        var inputStream: InputStream? = null
+                        while (true) {
+                            val currentEntry = rarFile.nextEntry ?: break
+                            if (currentEntry.name != entry.name) {
+                                continue
+                            }
+                            inputStream = rarFile.getInputStream(currentEntry)
+                            successful = true
+                            break
+                        }
+                        inputStream ?: throw NoSuchFileException(file.toString())
+                    } finally {
+                        if (!successful) {
+                            rarFile?.close()
+                        }
+                    }
+                }
+//#endif
                 // Unnecessary, but teaches lint that compressorType != null below might be false.
                 else -> {}
             }
@@ -322,6 +353,13 @@ object ArchiveReader {
 
     @Throws(ApacheArchiveException::class)
     private fun detectArchiveType(inputStream: InputStream): String =
+//#ifdef NONFREE
+        try {
+            RarFile.detect(inputStream)
+        } catch (e: IOException) {
+            throw ApacheArchiveException("RarFile.detect()", e)
+        } ?:
+//#endif
         ArchiveStreamFactory.detect(inputStream)
 
     private fun KClass<ZipFileCompat>.isSupported(file: Path): Boolean =

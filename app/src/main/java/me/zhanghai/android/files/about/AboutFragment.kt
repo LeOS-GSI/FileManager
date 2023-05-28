@@ -38,24 +38,26 @@ class AboutFragment : Fragment() {
         activity.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.gitHubLayout.setOnClickListener { startActivitySafe(GITHUB_URI.createViewIntent()) }
         binding.licensesLayout.setOnClickListener { LicensesDialogFragment.show(this) }
+//#ifdef NONFREE
+        binding.privacyPolicyLayout.isVisible = true
+        binding.privacyPolicyLayout.setOnClickListener {
+            startActivitySafe(PRIVACY_POLICY_URI.createViewIntent())
+        }
+//#endif
         binding.authorNameLayout.setOnClickListener {
             startActivitySafe(AUTHOR_RESUME_URI.createViewIntent())
         }
         binding.authorGitHubLayout.setOnClickListener {
             startActivitySafe(AUTHOR_GITHUB_URI.createViewIntent())
         }
-        binding.authorGooglePlusLayout.setOnClickListener {
-            startActivitySafe(AUTHOR_GOOGLE_PLUS_URI.createViewIntent())
-        }
     }
+
     companion object {
         private val GITHUB_URI = Uri.parse("https://github.com/LeOS-GSI/LeOS-Files")
         private val PRIVACY_POLICY_URI =
             Uri.parse("https://github.com/LeOS-GSI/LeOS-Files/blob/master/PRIVACY.md")
-        private val AUTHOR_RESUME_URI = Uri.parse("https://leos-gsi.de/")
+        private val AUTHOR_RESUME_URI = Uri.parse("https://leos-gsi.de")
         private val AUTHOR_GITHUB_URI = Uri.parse("https://github.com/LeOS-GSI")
-        private val AUTHOR_GOOGLE_PLUS_URI =
-            Uri.parse("https://t.me/LeOS_Support")
         private val AUTHOR_TWITTER_URI = Uri.parse("https://t.me/LeOS_Support")
     }
 }
