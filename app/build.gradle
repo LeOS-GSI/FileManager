@@ -58,6 +58,9 @@ android {
         resources {
             excludes += ['META-INF/DEPENDENCIES']
         }
+        jniLibs {
+            useLegacyPackaging true
+        }
     }
     lint {
         // For "Invalid package reference in library; not included in Android: javax.security.sasl.

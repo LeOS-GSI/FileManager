@@ -59,3 +59,18 @@
 # Stetho No-op
 # This library includes the no-op for stetho-okhttp3 which requires okhttp3, but we never used it.
 -dontwarn com.facebook.stetho.okhttp3.StethoInterceptor
+-dontwarn java.rmi.UnmarshalException
+-dontwarn javax.el.BeanELResolver
+-dontwarn javax.el.ELContext
+-dontwarn javax.el.ELResolver
+-dontwarn javax.el.ExpressionFactory
+-dontwarn javax.el.FunctionMapper
+-dontwarn javax.el.ValueExpression
+-dontwarn javax.el.VariableMapper
+-dontwarn org.ietf.jgss.GSSContext
+-dontwarn org.ietf.jgss.GSSCredential
+-dontwarn org.ietf.jgss.GSSException
+-dontwarn org.ietf.jgss.GSSManager
+-dontwarn org.ietf.jgss.GSSName
+-dontwarn org.ietf.jgss.Oid
+-dontwarn sun.security.x509.X509Key
