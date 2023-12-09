@@ -1,0 +1,39 @@
+Subject: [PATCH] readme
+---
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision f4067b9697f50ea55ba8cae2abf913298c080922)
++++ b/README.md	(revision 5a604dc8e39c7e7b213fbccd9cdce25a2f2541e7)
+@@ -1,16 +1,9 @@
+-# Material Files
+-
+-[本文中文版](README_zh-CN.md)
+-
+-[![Android CI status](https://github.com/zhanghai/MaterialFiles/workflows/Android%20CI/badge.svg)](https://github.com/zhanghai/MaterialFiles/actions) [![GitHub release](https://img.shields.io/github/v/release/zhanghai/MaterialFiles)](https://github.com/zhanghai/MaterialFiles/releases) [![License](https://img.shields.io/github/license/zhanghai/MaterialFiles?color=blue)](LICENSE)
++# LeOS FileManager
++Material Design file manager for LeOS-GSI
+ 
+ An open source Material Design file manager, for Android 5.0+.
+ 
+-[<img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="240">](https://play.google.com/store/apps/details?id=me.zhanghai.android.files) [<img alt="Get it on F-Droid" src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" width="240">](https://f-droid.org/packages/me.zhanghai.android.files)
+-
+-[Get it on Coolapk](https://www.coolapk.com/apk/me.zhanghai.android.files) [Get the APK](https://github.com/zhanghai/MaterialFiles/releases/latest/download/app-release.apk)
+-
+-[Help translation on Transifex](https://www.transifex.com/zhanghai/MaterialFiles/) ([Search Android & GNOME translations](https://translations.zhanghai.me/), [Search Microsoft translations](https://www.microsoft.com/en-us/language), [MIME type translations](https://gitlab.freedesktop.org/xdg/shared-mime-info/-/tree/master/po))
++-## ⚠ Join us on Telegram (https://t.me/LeOS_Support)
+ 
+ ## Preview
+ 
+@@ -68,7 +61,7 @@
+ 
+ ## License
+ 
+-    Copyright (C) 2018 Hai Zhang
++    Copyleft (C) 2023 Harvey186
+ 
+     This program is free software: you can redistribute it and/or modify
+     it under the terms of the GNU General Public License as published by

@@ -1,0 +1,44 @@
+Subject: [PATCH] removing firebaseCrashlytics and new version number
+---
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision e8bd6034262d667e36f9ea64dd4ea008684e6fda)
++++ b/app/build.gradle	(revision 22abb78c63b4f45728571712dc114722649fd82c)
+@@ -15,13 +15,7 @@
+         google()
+         mavenCentral()
+     }
+-    dependencies {
+-        classpath 'com.google.gms:google-services:4.4.0'
+-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.9'
+-    }
+ }
+-apply plugin: 'com.google.gms.google-services'
+-apply plugin: 'com.google.firebase.crashlytics'
+ //#endif
+ 
+ android {
+@@ -36,7 +30,7 @@
+         //noinspection OldTargetApi
+         targetSdk 34
+         versionCode 34
+-        versionName '1.6.2'
++        versionName '1.6.3'
+         resValue 'string', 'app_version', versionName + ' (' + versionCode + ')'
+         buildConfigField 'String', 'FILE_PROVIDIER_AUTHORITY', 'APPLICATION_ID + ".file_provider"'
+         resValue 'string', 'app_provider_authority', applicationId + '.app_provider'
+@@ -74,9 +68,7 @@
+             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+             signingConfig signingConfigs.release
+ //#ifdef NONFREE
+-            firebaseCrashlytics {
+-                nativeSymbolUploadEnabled true
+-            }
++
+ //#endif
+         }
+     }

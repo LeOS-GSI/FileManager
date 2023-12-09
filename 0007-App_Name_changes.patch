@@ -1,0 +1,376 @@
+Subject: [PATCH] App Name changes
+---
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/build.gradle	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -24,7 +24,7 @@
+     compileSdk 34
+     ndkVersion '26.0.10792818'
+     defaultConfig {
+-        applicationId 'me.zhanghai.android.files'
++        applicationId 'me.leos.android.files'
+         minSdk 21
+         // Not supporting notification runtime permission yet.
+         //noinspection OldTargetApi
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/AndroidManifest.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -46,7 +46,7 @@
+         android:banner="@drawable/banner"
+         android:fullBackupContent="true"
+         android:icon="@mipmap/launcher_icon"
+-        android:label="@string/app_name"
++        android:label="LeOS-Files"
+         android:requestLegacyExternalStorage="true"
+         android:requestRawExternalStorageAccess="true"
+         android:resizeableActivity="true"
+Index: app/src/main/res/values-bg/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-bg/strings.xml b/app/src/main/res/values-bg/strings.xml
+--- a/app/src/main/res/values-bg/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-bg/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Затваряне</string>
+     <string name="copy">Копиране</string>
+Index: app/src/main/res/values-cs/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-cs/strings.xml b/app/src/main/res/values-cs/strings.xml
+--- a/app/src/main/res/values-cs/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-cs/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Zavřít</string>
+     <string name="copy">Kopírovat</string>
+Index: app/src/main/res/values-de/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-de/strings.xml b/app/src/main/res/values-de/strings.xml
+--- a/app/src/main/res/values-de/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-de/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Schließen</string>
+     <string name="copy">Kopieren</string>
+Index: app/src/main/res/values-es/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-es/strings.xml b/app/src/main/res/values-es/strings.xml
+--- a/app/src/main/res/values-es/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-es/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Cerrar</string>
+     <string name="copy">Copiar</string>
+Index: app/src/main/res/values-eu/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-eu/strings.xml b/app/src/main/res/values-eu/strings.xml
+--- a/app/src/main/res/values-eu/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-eu/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Itxi</string>
+     <string name="copy">Kopiatu</string>
+Index: app/src/main/res/values-fi/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-fi/strings.xml b/app/src/main/res/values-fi/strings.xml
+--- a/app/src/main/res/values-fi/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-fi/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Sulje</string>
+     <string name="copy">Kopioi</string>
+Index: app/src/main/res/values-fr/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-fr/strings.xml b/app/src/main/res/values-fr/strings.xml
+--- a/app/src/main/res/values-fr/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-fr/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -9,7 +9,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     tools:ignore="ImpliedQuantity,MissingQuantity">
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Fermer</string>
+     <string name="copy">Copier</string>
+Index: app/src/main/res/values-hu/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-hu/strings.xml b/app/src/main/res/values-hu/strings.xml
+--- a/app/src/main/res/values-hu/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-hu/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Bezárás</string>
+     <string name="copy">Másolás</string>
+Index: app/src/main/res/values-in/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-in/strings.xml b/app/src/main/res/values-in/strings.xml
+--- a/app/src/main/res/values-in/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-in/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Tutup</string>
+     <string name="copy">Salin</string>
+Index: app/src/main/res/values-it/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-it/strings.xml b/app/src/main/res/values-it/strings.xml
+--- a/app/src/main/res/values-it/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-it/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Chiudi</string>
+     <string name="copy">Copia</string>
+Index: app/src/main/res/values-iw/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-iw/strings.xml b/app/src/main/res/values-iw/strings.xml
+--- a/app/src/main/res/values-iw/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-iw/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">סגירה</string>
+     <string name="copy">העתקה</string>
+Index: app/src/main/res/values-ja/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-ja/strings.xml b/app/src/main/res/values-ja/strings.xml
+--- a/app/src/main/res/values-ja/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-ja/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">閉じる</string>
+     <string name="copy">コピー</string>
+Index: app/src/main/res/values-ko/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-ko/strings.xml b/app/src/main/res/values-ko/strings.xml
+--- a/app/src/main/res/values-ko/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-ko/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">닫기</string>
+     <string name="copy">복사</string>
+Index: app/src/main/res/values-pl/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-pl/strings.xml b/app/src/main/res/values-pl/strings.xml
+--- a/app/src/main/res/values-pl/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-pl/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Zamknij</string>
+     <string name="copy">Kopiuj</string>
+Index: app/src/main/res/values-pt-rBR/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-pt-rBR/strings.xml b/app/src/main/res/values-pt-rBR/strings.xml
+--- a/app/src/main/res/values-pt-rBR/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-pt-rBR/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -9,7 +9,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     tools:ignore="ImpliedQuantity">
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Fechar</string>
+     <string name="copy">Copiar</string>
+Index: app/src/main/res/values-pt-rPT/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-pt-rPT/strings.xml b/app/src/main/res/values-pt-rPT/strings.xml
+--- a/app/src/main/res/values-pt-rPT/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-pt-rPT/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -9,7 +9,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     tools:ignore="ImpliedQuantity">
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Fechar</string>
+     <string name="copy">Copiar</string>
+Index: app/src/main/res/values-ro/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-ro/strings.xml b/app/src/main/res/values-ro/strings.xml
+--- a/app/src/main/res/values-ro/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-ro/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Închide</string>
+     <string name="copy">Copiază</string>
+Index: app/src/main/res/values-uk/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-uk/strings.xml b/app/src/main/res/values-uk/strings.xml
+--- a/app/src/main/res/values-uk/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-uk/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -9,7 +9,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     tools:ignore="ImpliedQuantity">
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Закрити</string>
+     <string name="copy">Копіювати</string>
+Index: app/src/main/res/values-vi/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values-vi/strings.xml b/app/src/main/res/values-vi/strings.xml
+--- a/app/src/main/res/values-vi/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values-vi/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Đóng</string>
+     <string name="copy">Sao chép</string>
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+--- a/app/src/main/res/values/strings.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
++++ b/app/src/main/res/values/strings.xml	(revision 8be1fba82d29ba530f171d9a59b95ea8fae367ec)
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Close</string>
+     <string name="copy">Copy</string>

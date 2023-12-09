@@ -1,0 +1,44 @@
+Subject: [PATCH] About screen changes
+---
+Index: app/src/main/java/me/zhanghai/android/files/about/AboutFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/me/zhanghai/android/files/about/AboutFragment.kt b/app/src/main/java/me/zhanghai/android/files/about/AboutFragment.kt
+--- a/app/src/main/java/me/zhanghai/android/files/about/AboutFragment.kt	(revision 5a604dc8e39c7e7b213fbccd9cdce25a2f2541e7)
++++ b/app/src/main/java/me/zhanghai/android/files/about/AboutFragment.kt	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
+@@ -56,11 +56,11 @@
+     }
+ 
+     companion object {
+-        private val GITHUB_URI = Uri.parse("https://github.com/zhanghai/MaterialFiles")
++        private val GITHUB_URI = Uri.parse("https://github.com/LeOS-GSI/LeOS-Files")
+         private val PRIVACY_POLICY_URI =
+-            Uri.parse("https://github.com/zhanghai/MaterialFiles/blob/master/PRIVACY.md")
+-        private val AUTHOR_RESUME_URI = Uri.parse("https://resume.zhanghai.me/")
+-        private val AUTHOR_GITHUB_URI = Uri.parse("https://github.com/zhanghai")
+-        private val AUTHOR_TWITTER_URI = Uri.parse("https://twitter.com/zhanghai95")
++            Uri.parse("https://github.com/LeOS-GSI/LeOS-Files/blob/master/PRIVACY.md")
++        private val AUTHOR_RESUME_URI = Uri.parse("https://LeOS-GSI.de/")
++        private val AUTHOR_GITHUB_URI = Uri.parse("https://github.com/LeOS-GSI/LeOS-Files")
++        private val AUTHOR_TWITTER_URI = Uri.parse("https://t.me/LeOS_Support")
+     }
+ }
+Index: app/src/main/res/layout/about_fragment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/about_fragment.xml b/app/src/main/res/layout/about_fragment.xml
+--- a/app/src/main/res/layout/about_fragment.xml	(revision 5a604dc8e39c7e7b213fbccd9cdce25a2f2541e7)
++++ b/app/src/main/res/layout/about_fragment.xml	(revision 699925cefd7dc82030f705bac5912a72c33bfc9b)
+@@ -269,7 +269,7 @@
+                                 android:layout_marginStart="@dimen/content_start_from_screen_edge_margin_minus_24dp"
+                                 android:ellipsize="end"
+                                 android:maxLines="1"
+-                                android:text="@string/about_author_name_title"
++                                android:text="Harvey186"
+                                 android:textAppearance="?textAppearanceListItem" />
+                         </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
+ 
