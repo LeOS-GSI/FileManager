@@ -24,7 +24,7 @@ android {
     compileSdk 34
     ndkVersion '26.0.10792818'
     defaultConfig {
-        applicationId 'me.zhanghai.android.files'
+        applicationId 'me.leos.android.files'
         minSdk 21
         // Not supporting notification runtime permission yet.
         //noinspection OldTargetApi
