@@ -269,7 +269,7 @@
                                 android:layout_marginStart="@dimen/content_start_from_screen_edge_margin_minus_24dp"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="@string/about_author_name_title"
+                                android:text="Harvey186"
                                 android:textAppearance="?textAppearanceListItem" />
                         </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
 
