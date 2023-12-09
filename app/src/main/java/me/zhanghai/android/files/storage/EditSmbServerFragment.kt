@@ -197,7 +197,7 @@ class EditSmbServerFragment : Fragment() {
             val items = List(adapter.count) { adapter.getItem(it) as CharSequence }
             val selectedItem = binding.authenticationTypeEdit.text
             val selectedIndex = items.indexOfFirst { TextUtils.equals(it, selectedItem) }
-            return AuthenticationType.values()[selectedIndex]
+            return AuthenticationType.entries[selectedIndex]
         }
         set(value) {
             val adapter = binding.authenticationTypeEdit.adapter
@@ -258,6 +258,7 @@ class EditSmbServerFragment : Fragment() {
     private fun getServerOrSetError(): SmbServer? {
         var errorEdit: TextInputEditText? = null
         val host = binding.hostEdit.text.toString().takeIfNotEmpty()
+            ?.let { URI::class.canonicalizeHost(it) }
         if (host == null) {
             binding.hostLayout.error = getString(R.string.storage_edit_smb_server_host_error_empty)
             if (errorEdit == null) {

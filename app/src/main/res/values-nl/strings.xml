@@ -42,8 +42,8 @@
     <string name="share">Delen</string>
     <string name="show">Tonen</string>
     <string name="skip">Overslaan</string>
-    <string name="sort">Sorteren</string>
     <string name="stop">Stoppen</string>
+    <string name="system_default">Systeemstandaard</string>
     <string name="unknown">Onbekend</string>
     <string name="view">Bekijken</string>
 
@@ -57,9 +57,13 @@
         <item quantity="other">%1$,d bytes</item>
     </plurals>
 
+    <string name="all_files_access_rationale_message">Deze app heeft toegang nodig tot je bestanden. Sta de toegang toe op het volgende scherm.</string>
+    <!-- The allow button before Android 10 was in all-caps. -->
     <string name="storage_permission_rationale_message">Deze app heeft toegang nodig tot je bestanden. Druk op het volgende schermpje op ‘TOESTAAN’.</string>
     <string name="storage_permission_permanently_denied_message">Deze app heeft toegang nodig tot je bestanden. Verleen het recht ‘Opslag’ in de systeeminstellingen.</string>
-    <string name="all_files_access_rationale_message">Deze app heeft toegang nodig tot je bestanden. Sta de toegang toe op het volgende scherm.</string>
+    <!-- The allow button is in sentence case now. -->
+    <string name="notification_permission_rationale_message">Deze app heeft toegang nodig tot je meldingen. Druk op het volgende schermpje op ‘TOESTAAN’.</string>
+    <string name="notification_permission_permanently_denied_message">Deze app heeft toegang nodig tot je meldingen. Verleen het recht ‘Meldingen’ in de systeeminstellingen.</string>
 
     <string name="notification_channel_background_activity_start_name">Achtergrondtaken</string>
     <string name="notification_channel_background_activity_start_description">Neem taken aan terwijl de app op de achtergrond draait</string>
@@ -67,6 +71,10 @@
     <string name="notification_channel_file_job_description">Toon en beheer bestandshandelingen</string>
     <string name="notification_channel_ftp_server_name">FTP-server</string>
     <string name="notification_channel_ftp_server_description">Toon en beheer de FTP-server</string>
+
+    <string name="file_action_archive_password_title">Wachtwoord vereist</string>
+    <string name="file_action_archive_password_message_format">‘%1$s’ is beveiligd met een wachtwoord.</string>
+    <string name="file_action_archive_password_error_empty">Voer een wachtwoord in</string>
 
     <plurals name="file_job_archive_scan_notification_title_format">
         <item quantity="one">Bezig met voorbereiden van %1$,d bestand (%2$s)</item>
@@ -248,6 +256,7 @@
     <string name="file_create_archive_type_zip">.zip</string>
     <string name="file_create_archive_type_tar_xz">.tar.xz</string>
     <string name="file_create_archive_type_7z">.7z</string>
+    <string name="file_create_archive_password">Wachtwoord (optioneel)</string>
     <string name="file_add_bookmark_success">Bladwijzer is toegevoegd</string>
     <string name="file_create_file_title">Nieuw bestand</string>
     <string name="file_create_directory_title">Nieuwe map</string>
@@ -272,13 +281,16 @@
     <string name="file_list_subtitle_separator">,\u0020</string>
     <string name="file_list_path_error_empty">Voer een locatie in</string>
     <string name="file_list_path_error_invalid">Ongeldige locatie</string>
+    <string name="file_list_action_view_sort">Weergave en sortering</string>
+    <string name="file_list_action_view_list">Lĳst</string>
+    <string name="file_list_action_view_grid">Rooster</string>
     <string name="file_list_action_sort_by_name">Naam</string>
     <string name="file_list_action_sort_by_type">Soort</string>
     <string name="file_list_action_sort_by_size">Grootte</string>
     <string name="file_list_action_sort_by_last_modified">Aangepast op</string>
     <string name="file_list_action_sort_order_ascending">Oplopend</string>
     <string name="file_list_action_sort_directories_first">Mappen vóór bestanden</string>
-    <string name="file_list_action_sort_path_specific">Alleen in deze map</string>
+    <string name="file_list_action_view_sort_path_specific">Alleen in deze map</string>
     <string name="file_list_action_new_task">Nieuw venster</string>
     <string name="file_list_action_navigate_up">Ga omhoog</string>
     <string name="file_list_action_navigate_to">Ga naar</string>
@@ -288,7 +300,7 @@
     <string name="file_list_action_add_bookmark">Bladwijzer toevoegen</string>
     <string name="file_list_action_create_shortcut">Snelkoppeling maken</string>
     <string name="file_list_breadcrumb_action_open_in_new_task">Openen in nieuw venster</string>
-    <string name="file_list_select_title_format">%1$,d geselecteerd</string>
+    <string name="file_list_select_title_format">%1$,d</string>
     <string name="file_list_select_current_directory_format">‘%1$s’ selecteren</string>
     <string name="file_list_paste_move_title_format">Bezig met verplaatsen van %1$,d</string>
     <string name="file_list_paste_copy_title_format">Bezig met kopiëren van %1$,d</string>
@@ -422,6 +434,10 @@
     <string name="storage_edit_device_storage_title">Apparaatopslag bewerken</string>
     <string name="storage_edit_device_storage_name">Naam</string>
     <string name="storage_edit_device_storage_path">Locatie</string>
+    <string name="storage_add_document_manager_shortcut_title">Documentsnelkoppeling maken</string>
+    <string name="storage_edit_document_manager_shortcut_title">Documentsnelkoppeling bewerken</string>
+    <string name="storage_edit_document_manager_shortcut_uri_error_empty">Voer een uri in</string>
+    <string name="storage_edit_document_manager_shortcut_uri_error_invalid">Ongeldige uri</string>
     <string name="storage_add_document_tree_title">Externe opslag toevoegen</string>
     <string name="storage_edit_document_tree_title">Externe opslag bewerken</string>
     <string name="storage_edit_document_tree_name">Naam</string>
@@ -545,9 +561,13 @@
     <string name="ftp_server_state_summary_stopping">Bezig met stoppen…</string>
     <string name="ftp_server_state_summary_stopped">Niet gestart</string>
     <string name="ftp_server_url_title">URL</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Kan lokaal ip-adres niet ophalen</string>
+    <string name="ftp_server_url_summary_no_local_inet_address">Het lokale ip-adres is onbekend</string>
     <string name="ftp_server_url_menu_copy_url">URL kopiëren</string>
     <string name="ftp_server_url_menu_copy_password">Wachtwoord kopiëren</string>
+    <string name="ftp_server_add_tile_title">Toevoegen aan snelle instellingen</string>
+    <string name="ftp_server_add_tile_result_added">De ftp-server is toegevoegd aan de snelle instellingen</string>
+    <string name="ftp_server_add_tile_result_already_added">De ftp-server is al toegevoegd aan de snelle instellingen</string>
+    <string name="ftp_server_add_tile_result_error">De ftp-server kan niet worden toegevoegd aan de snelle instellingen</string>
     <string name="ftp_server_configuration_title">Instellingen</string>
     <string name="ftp_server_anonymous_login_title">Anoniem inloggen</string>
     <string name="ftp_server_username_title">Gebruikersnaam</string>
@@ -555,10 +575,9 @@
     <string name="ftp_server_port_title">Poort</string>
     <string name="ftp_server_home_directory_title">Hoofdmap</string>
     <string name="ftp_server_writable_title">Wegschrijven toestaan</string>
-    <string name="ftp_server_notification_text">De FTP-server draait</string>
-
     <string name="settings_title">Instellingen</string>
     <string name="settings_interface_title">Uiterlijk</string>
+    <string name="settings_locale_title">Taal</string>
     <string name="settings_theme_color_title">Themakleur</string>
     <string name="settings_theme_color_summary">De kleur die het vaakst wordt gebruikt in de app</string>
     <string name="settings_material_design_3_title">Material Design 3</string>

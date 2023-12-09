@@ -94,8 +94,8 @@ private fun migrateFileSortOptionsSetting1_1_0(sharedPreferences: SharedPreferen
                 oldParcel.unmarshall(oldBytes, 0, oldBytes.size)
                 oldParcel.setDataPosition(0)
                 newParcel.writeString(oldParcel.readString())
-                newParcel.writeString(FileSortOptions.By.values()[oldParcel.readInt()].name)
-                newParcel.writeString(FileSortOptions.Order.values()[oldParcel.readInt()].name)
+                newParcel.writeString(FileSortOptions.By.entries[oldParcel.readInt()].name)
+                newParcel.writeString(FileSortOptions.Order.entries[oldParcel.readInt()].name)
                 newParcel.writeInt(oldParcel.readByte().toInt())
             }
             newParcel.marshall()
@@ -519,4 +519,25 @@ private fun migrateSftpServersSetting1_5_0() {
         null
     }
     defaultSharedPreferences.edit { putString(key, newBytes?.toBase64()?.value) }
+}
+
+internal fun upgradeAppTo1_6_0() {
+    addViewTypePathSetting1_6_0()
+}
+
+private fun addViewTypePathSetting1_6_0() {
+    val keys = pathSharedPreferences.all.keys.toSet()
+    val sortOptionsKey = application.getString(R.string.pref_key_file_list_sort_options)
+    val viewTypeKey = application.getString(R.string.pref_key_file_list_view_type)
+    val defaultViewType = application.getString(R.string.pref_default_value_file_list_view_type)
+    for (key in keys) {
+        if (!key.startsWith(sortOptionsKey)) {
+            continue
+        }
+        val newKey = key.replaceFirst(sortOptionsKey, viewTypeKey)
+        if (newKey in keys) {
+            continue
+        }
+        pathSharedPreferences.edit { putString(newKey, defaultViewType) }
+    }
 }

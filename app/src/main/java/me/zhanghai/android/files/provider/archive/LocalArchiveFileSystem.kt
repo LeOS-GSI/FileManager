@@ -10,17 +10,20 @@ import java8.nio.file.FileStore
 import java8.nio.file.FileSystem
 import java8.nio.file.NoSuchFileException
 import java8.nio.file.NotDirectoryException
+import java8.nio.file.NotLinkException
 import java8.nio.file.Path
 import java8.nio.file.PathMatcher
 import java8.nio.file.WatchService
 import java8.nio.file.attribute.UserPrincipalLookupService
 import java8.nio.file.spi.FileSystemProvider
 import me.zhanghai.android.files.provider.archive.archiver.ArchiveReader
+import me.zhanghai.android.files.provider.archive.archiver.ReadArchive
 import me.zhanghai.android.files.provider.common.ByteString
 import me.zhanghai.android.files.provider.common.ByteStringBuilder
 import me.zhanghai.android.files.provider.common.ByteStringListPathCreator
+import me.zhanghai.android.files.provider.common.IsDirectoryException
 import me.zhanghai.android.files.provider.common.toByteString
-import org.apache.commons.compress.archivers.ArchiveEntry
+import me.zhanghai.android.libarchive.ArchiveException
 import java.io.IOException
 import java.io.InputStream
 
@@ -47,21 +50,23 @@ internal class LocalArchiveFileSystem(
 
     private var isOpen = true
 
+    private var passwords = listOf<String>()
+
     private var isRefreshNeeded = true
 
-    private var entries: Map<Path, ArchiveEntry>? = null
+    private var entries: Map<Path, ReadArchive.Entry>? = null
 
     private var tree: Map<Path, List<Path>>? = null
 
     @Throws(IOException::class)
-    fun getEntry(path: Path): ArchiveEntry =
+    fun getEntry(path: Path): ReadArchive.Entry =
         synchronized(lock) {
-            ensureEntriesLocked()
+            ensureEntriesLocked(path)
             getEntryLocked(path)
         }
 
     @Throws(IOException::class)
-    private fun getEntryLocked(path: Path): ArchiveEntry =
+    private fun getEntryLocked(path: Path): ReadArchive.Entry =
         synchronized(lock) {
             entries!![path] ?: throw NoSuchFileException(path.toString())
         }
@@ -69,15 +74,23 @@ internal class LocalArchiveFileSystem(
     @Throws(IOException::class)
     fun newInputStream(file: Path): InputStream =
         synchronized(lock) {
-            ensureEntriesLocked()
+            ensureEntriesLocked(file)
             val entry = getEntryLocked(file)
-            ArchiveReader.newInputStream(archiveFile, entry)
+            if (entry.isDirectory) {
+                throw IsDirectoryException(file.toString())
+            }
+            val inputStream = try {
+                ArchiveReader.newInputStream(archiveFile, passwords, entry)
+            } catch (e: ArchiveException) {
+                throw e.toFileSystemOrInterruptedIOException(file)
+            } ?: throw NoSuchFileException(file.toString())
+            ArchiveExceptionInputStream(inputStream, file)
         }
 
     @Throws(IOException::class)
     fun getDirectoryChildren(directory: Path): List<Path> =
         synchronized(lock) {
-            ensureEntriesLocked()
+            ensureEntriesLocked(directory)
             val entry = getEntryLocked(directory)
             if (!entry.isDirectory) {
                 throw NotDirectoryException(directory.toString())
@@ -88,10 +101,31 @@ internal class LocalArchiveFileSystem(
     @Throws(IOException::class)
     fun readSymbolicLink(link: Path): String =
         synchronized(lock) {
-            ensureEntriesLocked()
+            ensureEntriesLocked(link)
             val entry = getEntryLocked(link)
-            ArchiveReader.readSymbolicLink(archiveFile, entry)
+            if (!entry.isSymbolicLink) {
+                throw NotLinkException(link.toString())
+            }
+            entry.symbolicLinkTarget.orEmpty()
         }
+
+    fun addPassword(password: String) {
+        synchronized(lock) {
+            if (!isOpen) {
+                throw ClosedFileSystemException()
+            }
+            passwords += password
+        }
+    }
+
+    fun setPasswords(passwords: List<String>) {
+        synchronized(lock) {
+            if (!isOpen) {
+                throw ClosedFileSystemException()
+            }
+            this.passwords = passwords
+        }
+    }
 
     fun refresh() {
         synchronized(lock) {
@@ -103,12 +137,16 @@ internal class LocalArchiveFileSystem(
     }
 
     @Throws(IOException::class)
-    private fun ensureEntriesLocked() {
+    private fun ensureEntriesLocked(file: Path) {
         if (!isOpen) {
             throw ClosedFileSystemException()
         }
         if (isRefreshNeeded) {
-            val entriesAndTree = ArchiveReader.readEntries(archiveFile, rootDirectory)
+            val entriesAndTree = try {
+                ArchiveReader.readEntries(archiveFile, passwords, rootDirectory)
+            } catch (e: ArchiveException) {
+                throw e.toFileSystemOrInterruptedIOException(file)
+            }
             entries = entriesAndTree.first
             tree = entriesAndTree.second
             isRefreshNeeded = false

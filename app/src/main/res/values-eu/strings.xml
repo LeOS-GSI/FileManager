@@ -7,7 +7,7 @@
 
 <resources>
 
-    <string name="app_name">LeOS-Files</string>
+    <string name="app_name">Material Files</string>
 
     <string name="close">Itxi</string>
     <string name="copy">Kopiatu</string>
@@ -38,7 +38,6 @@
     <string name="select_all">Hautatu guztiak</string>
     <string name="share">Partekatu</string>
     <string name="skip">Saltatu</string>
-    <string name="sort">Ordenatu</string>
     <string name="stop">Gelditu</string>
     <string name="unknown">Ezezaguna</string>
     <string name="view">Ikusi</string>
@@ -53,6 +52,7 @@
         <item quantity="other">%1$,d byte</item>
     </plurals>
 
+    <!-- The allow button before Android 10 was in all-caps. -->
     <string name="storage_permission_rationale_message">Aplikazioak fitxategiak atzitzeko baimena behar du. Sakatu \"BAIMENDU\" hurrengo elkarrizketa-koadroan.</string>
     <string name="storage_permission_permanently_denied_message">Aplikazioak fitxategiak atzitzeko baimena behar du. Eman \"Memoria\" (sic)  baimena sistemaren ezarpenetan.</string>
     <string name="notification_channel_background_activity_start_name">Ekintzak bigarren planoan</string>
@@ -256,7 +256,6 @@
     <string name="file_list_action_sort_by_last_modified">Azken aldaketa</string>
     <string name="file_list_action_sort_order_ascending">Gorantza</string>
     <string name="file_list_action_sort_directories_first">Karpetak aurretik</string>
-    <string name="file_list_action_sort_path_specific">Karpeta honetan bakarrik</string>
     <string name="file_list_action_new_task">Leiho berria</string>
     <string name="file_list_action_navigate_up">Joan gora</string>
     <string name="file_list_action_show_hidden_files">Erakutsi ezkutatutako fitxategiak</string>
@@ -265,7 +264,6 @@
     <string name="file_list_action_add_bookmark">Gehitu laster-marka</string>
     <string name="file_list_action_create_shortcut">Sortu laster-marka</string>
     <string name="file_list_breadcrumb_action_open_in_new_task">Ireki leiho berrian</string>
-    <string name="file_list_select_title_format">%1$,d hautatuta</string>
     <string name="file_list_select_current_directory_format">Hautatu “%1$s”</string>
     <string name="file_list_paste_move_title_format">%1$,d lekuz aldatzen</string>
     <string name="file_list_paste_copy_title_format">%1$,d kopiatzen</string>
@@ -364,7 +362,6 @@
     <string name="ftp_server_state_summary_stopping">Gelditzen…</string>
     <string name="ftp_server_state_summary_stopped">Hasi gabe</string>
     <string name="ftp_server_url_title">URLa</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">Ezin izan da IP lokala eskuratu</string>
     <string name="ftp_server_url_menu_copy_url">Kopiatu URLa</string>
     <string name="ftp_server_url_menu_copy_password">Kopiatu pasahitza</string>
     <string name="ftp_server_configuration_title">Konfigurazioa</string>
@@ -374,8 +371,6 @@
     <string name="ftp_server_port_title">Ataka</string>
     <string name="ftp_server_home_directory_title">Erro karpeta</string>
     <string name="ftp_server_writable_title">Baimendu idaztea</string>
-    <string name="ftp_server_notification_text">FTP zerbitzaria abian da</string>
-
     <string name="settings_title">Ezarpenak</string>
     <string name="settings_interface_title">Interfazea</string>
     <string name="settings_night_mode_title">Gauerako modua</string>

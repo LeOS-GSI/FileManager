@@ -207,7 +207,7 @@ class EditFtpServerFragment : Fragment() {
             val items = List(adapter.count) { adapter.getItem(it) as CharSequence }
             val selectedItem = binding.protocolEdit.text
             val selectedIndex = items.indexOfFirst { TextUtils.equals(it, selectedItem) }
-            return Protocol.values()[selectedIndex]
+            return Protocol.entries[selectedIndex]
         }
         set(value) {
             val adapter = binding.protocolEdit.adapter
@@ -221,7 +221,7 @@ class EditFtpServerFragment : Fragment() {
             val items = List(adapter.count) { adapter.getItem(it) as CharSequence }
             val selectedItem = binding.authenticationTypeEdit.text
             val selectedIndex = items.indexOfFirst { TextUtils.equals(it, selectedItem) }
-            return AuthenticationType.values()[selectedIndex]
+            return AuthenticationType.entries[selectedIndex]
         }
         set(value) {
             val adapter = binding.authenticationTypeEdit.adapter
@@ -241,7 +241,7 @@ class EditFtpServerFragment : Fragment() {
             val items = List(adapter.count) { adapter.getItem(it) as CharSequence }
             val selectedItem = binding.modeEdit.text
             val selectedIndex = items.indexOfFirst { TextUtils.equals(it, selectedItem) }
-            return Mode.values()[selectedIndex]
+            return Mode.entries[selectedIndex]
         }
         set(value) {
             val adapter = binding.modeEdit.adapter
@@ -311,6 +311,7 @@ class EditFtpServerFragment : Fragment() {
     private fun getServerOrSetError(): FtpServer? {
         var errorEdit: TextInputEditText? = null
         val host = binding.hostEdit.text.toString().takeIfNotEmpty()
+            ?.let { URI::class.canonicalizeHost(it) }
         if (host == null) {
             binding.hostLayout.error = getString(R.string.storage_edit_ftp_server_host_error_empty)
             if (errorEdit == null) {

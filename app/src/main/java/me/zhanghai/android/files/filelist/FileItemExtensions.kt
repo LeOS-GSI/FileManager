@@ -21,12 +21,12 @@ import me.zhanghai.android.files.file.isPdf
 import me.zhanghai.android.files.provider.archive.createArchiveRootPath
 import me.zhanghai.android.files.provider.document.documentSupportsThumbnail
 import me.zhanghai.android.files.provider.document.isDocumentPath
-import me.zhanghai.android.files.provider.document.resolver.DocumentResolver
 import me.zhanghai.android.files.provider.ftp.isFtpPath
 import me.zhanghai.android.files.provider.linux.isLinuxPath
 import me.zhanghai.android.files.settings.Settings
 import me.zhanghai.android.files.util.asFileName
 import me.zhanghai.android.files.util.isGetPackageArchiveInfoCompatible
+import me.zhanghai.android.files.util.isMediaMetadataRetrieverCompatible
 import me.zhanghai.android.files.util.valueCompat
 import java.text.CollationKey
 
@@ -61,17 +61,17 @@ val FileItem.supportsThumbnail: Boolean
         if (path.isDocumentPath && attributes.documentSupportsThumbnail) {
             return true
         }
-        val isLocalPath = path.isLinuxPath
-            || (path.isDocumentPath && DocumentResolver.isLocal(path as DocumentResolver.Path))
-        val shouldReadRemotePath = !path.isFtpPath
-            && Settings.READ_REMOTE_FILES_FOR_THUMBNAIL.valueCompat
-        if (!(isLocalPath || shouldReadRemotePath)) {
-            return false
+        if (path.isRemotePath) {
+            val shouldReadRemotePath = !path.isFtpPath
+                && Settings.READ_REMOTE_FILES_FOR_THUMBNAIL.valueCompat
+            if (!shouldReadRemotePath) {
+                return false
+            }
         }
         return when {
             mimeType.isApk && path.isGetPackageArchiveInfoCompatible -> true
             mimeType.isImage -> true
-            mimeType.isMedia && (path.isLinuxPath || path.isDocumentPath) -> true
+            mimeType.isMedia && path.isMediaMetadataRetrieverCompatible -> true
             mimeType.isPdf && (path.isLinuxPath || path.isDocumentPath) ->
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
                     || Settings.SHOW_PDF_THUMBNAIL_PRE_28.valueCompat

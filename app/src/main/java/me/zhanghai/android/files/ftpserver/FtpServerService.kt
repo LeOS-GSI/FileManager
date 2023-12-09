@@ -15,6 +15,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import me.zhanghai.android.files.compat.mainExecutorCompat
 import me.zhanghai.android.files.settings.Settings
+import me.zhanghai.android.files.util.WakeWifiLock
 import me.zhanghai.android.files.util.showToast
 import me.zhanghai.android.files.util.valueCompat
 import java.util.concurrent.Executors
@@ -26,7 +27,9 @@ class FtpServerService : Service() {
             _stateLiveData.value = value
         }
 
-    private lateinit var wakeLock: FtpServerWakeLock
+    private lateinit var wakeWifiLock: WakeWifiLock
+
+    private lateinit var notification: FtpServerNotification
 
     private val executorService = Executors.newSingleThreadExecutor()
 
@@ -35,7 +38,8 @@ class FtpServerService : Service() {
     override fun onCreate() {
         super.onCreate()
 
-        wakeLock = FtpServerWakeLock()
+        wakeWifiLock = WakeWifiLock(FtpServerService::class.java.simpleName)
+        notification = FtpServerNotification(this)
         executeStart()
     }
 
@@ -54,8 +58,8 @@ class FtpServerService : Service() {
         if (state == State.STARTING || state == State.RUNNING) {
             return
         }
-        wakeLock.acquire()
-        FtpServerServiceNotification.startForeground(this)
+        wakeWifiLock.isAcquired = true
+        notification.startForeground()
         state = State.STARTING
         executorService.execute { doStart() }
     }
@@ -63,8 +67,8 @@ class FtpServerService : Service() {
     private fun onStartError(exception: Exception) {
         state = State.STOPPED
         showToast(exception.toString())
-        FtpServerServiceNotification.stopForeground(this)
-        wakeLock.release()
+        notification.stopForeground()
+        wakeWifiLock.isAcquired = false
         stopSelf()
     }
 
@@ -74,8 +78,8 @@ class FtpServerService : Service() {
         }
         state = State.STOPPING
         executorService.execute { doStop() }
-        FtpServerServiceNotification.stopForeground(this)
-        wakeLock.release()
+        notification.stopForeground()
+        wakeWifiLock.isAcquired = false
     }
 
     @WorkerThread

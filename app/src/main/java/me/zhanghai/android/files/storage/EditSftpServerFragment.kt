@@ -186,7 +186,7 @@ class EditSftpServerFragment : Fragment() {
             val items = List(adapter.count) { adapter.getItem(it) as CharSequence }
             val selectedItem = binding.authenticationTypeEdit.text
             val selectedIndex = items.indexOfFirst { TextUtils.equals(it, selectedItem) }
-            return AuthenticationType.values()[selectedIndex]
+            return AuthenticationType.entries[selectedIndex]
         }
         set(value) {
             val adapter = binding.authenticationTypeEdit.adapter
@@ -280,6 +280,7 @@ class EditSftpServerFragment : Fragment() {
     private fun getServerOrSetError(): SftpServer? {
         var errorEdit: TextInputEditText? = null
         val host = binding.hostEdit.text.toString().takeIfNotEmpty()
+            ?.let { URI::class.canonicalizeHost(it) }
         if (host == null) {
             binding.hostLayout.error =
                 getString(R.string.storage_edit_sftp_server_host_error_empty)

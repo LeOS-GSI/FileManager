@@ -12,7 +12,9 @@ import android.view.View
 import android.widget.EditText
 import android.widget.RadioGroup
 import androidx.annotation.StringRes
+import androidx.core.view.isGone
 import androidx.fragment.app.Fragment
+import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.parcelize.Parcelize
 import me.zhanghai.android.files.R
@@ -23,8 +25,8 @@ import me.zhanghai.android.files.util.args
 import me.zhanghai.android.files.util.putArgs
 import me.zhanghai.android.files.util.setTextWithSelection
 import me.zhanghai.android.files.util.show
-import org.apache.commons.compress.archivers.ArchiveStreamFactory
-import org.apache.commons.compress.compressors.CompressorStreamFactory
+import me.zhanghai.android.files.util.takeIfNotEmpty
+import me.zhanghai.android.libarchive.Archive
 
 class CreateArchiveDialogFragment : FileNameDialogFragment() {
     private val args by args<Args>()
@@ -51,6 +53,8 @@ class CreateArchiveDialogFragment : FileNameDialogFragment() {
             }
             name?.let { binding.nameEdit.setTextWithSelection(it) }
         }
+        binding.typeGroup.setOnCheckedChangeListener { _, _ -> updatePasswordLayoutVisibility() }
+        updatePasswordLayoutVisibility()
         return dialog
     }
 
@@ -62,34 +66,39 @@ class CreateArchiveDialogFragment : FileNameDialogFragment() {
 
     override val name: String
         get() {
-            val extension = when (val typeId = binding.typeGroup.checkedRadioButtonId) {
+            val extension = when (val checkedId = binding.typeGroup.checkedRadioButtonId) {
                 R.id.zipRadio -> "zip"
                 R.id.tarXzRadio -> "tar.xz"
                 R.id.sevenZRadio -> "7z"
-                else -> throw AssertionError(typeId)
+                else -> throw AssertionError(checkedId)
             }
             return "${super.name}.$extension"
         }
 
-    override fun onOk(name: String) {
-        val archiveType: String
-        val compressorType: String?
-        when (val typeId = binding.typeGroup.checkedRadioButtonId) {
-            R.id.zipRadio -> {
-                archiveType = ArchiveStreamFactory.ZIP
-                compressorType = null
-            }
-            R.id.tarXzRadio -> {
-                archiveType = ArchiveStreamFactory.TAR
-                compressorType = CompressorStreamFactory.XZ
-            }
-            R.id.sevenZRadio -> {
-                archiveType = ArchiveStreamFactory.SEVEN_Z
-                compressorType = null
-            }
-            else -> throw AssertionError(typeId)
+    private val isPasswordSupported: Boolean
+        get() = when (val checkedId = binding.typeGroup.checkedRadioButtonId) {
+            R.id.zipRadio -> true
+            R.id.tarXzRadio, R.id.sevenZRadio -> false
+            else -> throw AssertionError(checkedId)
         }
-        listener.archive(args.files, name, archiveType, compressorType)
+
+    private fun updatePasswordLayoutVisibility() {
+        binding.passwordLayout.isGone = !isPasswordSupported
+    }
+
+    override fun onOk(name: String) {
+        val (format, filter) = when (val checkedId = binding.typeGroup.checkedRadioButtonId) {
+            R.id.zipRadio -> Archive.FORMAT_ZIP to Archive.FILTER_NONE
+            R.id.tarXzRadio -> Archive.FORMAT_TAR to Archive.FILTER_XZ
+            R.id.sevenZRadio -> Archive.FORMAT_7ZIP to Archive.FILTER_NONE
+            else -> throw AssertionError(checkedId)
+        }
+        val password = if (isPasswordSupported) {
+            binding.passwordEdit.text!!.toString().takeIfNotEmpty()
+        } else {
+            null
+        }
+        listener.archive(args.files, name, format, filter, password)
     }
 
     companion object {
@@ -105,7 +114,9 @@ class CreateArchiveDialogFragment : FileNameDialogFragment() {
         root: View,
         nameLayout: TextInputLayout,
         nameEdit: EditText,
-        val typeGroup: RadioGroup
+        val typeGroup: RadioGroup,
+        val passwordLayout: TextInputLayout,
+        val passwordEdit: TextInputEditText
     ) : NameDialogFragment.Binding(root, nameLayout, nameEdit) {
         companion object {
             fun inflate(inflater: LayoutInflater): Binding {
@@ -113,13 +124,14 @@ class CreateArchiveDialogFragment : FileNameDialogFragment() {
                 val bindingRoot = binding.root
                 val nameBinding = NameDialogNameIncludeBinding.bind(bindingRoot)
                 return Binding(
-                    bindingRoot, nameBinding.nameLayout, nameBinding.nameEdit, binding.typeGroup
+                    bindingRoot, nameBinding.nameLayout, nameBinding.nameEdit, binding.typeGroup,
+                    binding.passwordLayout, binding.passwordEdit
                 )
             }
         }
     }
 
     interface Listener : FileNameDialogFragment.Listener {
-        fun archive(files: FileItemSet, name: String, archiveType: String, compressorType: String?)
+        fun archive(files: FileItemSet, name: String, format: Int, filter: Int, password: String?)
     }
 }

@@ -269,7 +269,7 @@
                                 android:layout_marginStart="@dimen/content_start_from_screen_edge_margin_minus_24dp"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="Harvey186"
+                                android:text="@string/about_author_name_title"
                                 android:textAppearance="?textAppearanceListItem" />
                         </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
 
@@ -314,7 +314,7 @@
                                 android:layout_width="@dimen/icon_size"
                                 android:layout_height="@dimen/icon_size"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/google_plus_icon_white_24dp"
+                                android:src="@drawable/twitter_icon_white_24dp"
                                 app:tint="?colorControlNormal" />
 
                             <TextView
@@ -323,10 +323,9 @@
                                 android:layout_marginStart="@dimen/content_start_from_screen_edge_margin_minus_24dp"
                                 android:ellipsize="end"
                                 android:maxLines="1"
-                                android:text="Telegram Support Group"
+                                android:text="@string/about_author_twitter_title"
                                 android:textAppearance="?textAppearanceListItem" />
                         </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
-
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>

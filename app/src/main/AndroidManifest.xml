@@ -9,15 +9,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
     <uses-feature android:name="android.hardware.wifi" android:required="false" />
+    <!-- TODO: Google Play requires TV apps to be published with AAB. -->
+    <!--<uses-feature android:name="android.software.leanback" android:required="false" />-->
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
         android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission
         android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
@@ -38,13 +43,14 @@
       -->
     <application
         android:allowBackup="true"
+        android:banner="@drawable/banner"
         android:fullBackupContent="true"
-        android:icon="@mipmap/ic_launcher_foreground"
+        android:icon="@mipmap/launcher_icon"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:requestRawExternalStorageAccess="true"
         android:resizeableActivity="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/launcher_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialFiles"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">
@@ -57,6 +63,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <!-- TODO: Google Play requires TV apps to be published with AAB. -->
+                <!--<category android:name="android.intent.category.LEANBACK_LAUNCHER" />-->
             </intent-filter>
             <intent-filter tools:ignore="AppLinkUrlError">
                 <action android:name="android.intent.action.VIEW" />
@@ -170,6 +178,16 @@
             android:theme="@style/Theme.MaterialFiles.Translucent" />
 
         <activity
+            android:name="me.zhanghai.android.files.storage.AddDocumentManagerShortcutActivity"
+            android:label="@string/storage_add_document_manager_shortcut_title"
+            android:theme="@style/Theme.MaterialFiles.Translucent" />
+
+        <activity
+            android:name="me.zhanghai.android.files.storage.EditDocumentManagerShortcutDialogActivity"
+            android:label="@string/storage_edit_document_manager_shortcut_title"
+            android:theme="@style/Theme.MaterialFiles.Translucent" />
+
+        <activity
             android:name="me.zhanghai.android.files.storage.AddDocumentTreeActivity"
             android:label="@string/storage_add_document_tree_title"
             android:theme="@style/Theme.MaterialFiles.Translucent" />
@@ -257,7 +275,12 @@
             android:theme="@style/Theme.MaterialFiles" />
 
         <activity
-            android:name="me.zhanghai.android.files.filejob.FileJobActionDialogActivity"
+            android:name="me.zhanghai.android.files.fileaction.ArchivePasswordDialogActivity"
+            android:autoRemoveFromRecents="true"
+            android:theme="@style/Theme.MaterialFiles.Translucent" />
+
+        <activity
+            android:name="me.zhanghai.android.files.filejob.FileJobErrorDialogActivity"
             android:autoRemoveFromRecents="true"
             android:theme="@style/Theme.MaterialFiles.Translucent" />
 
@@ -297,9 +320,12 @@
             </intent-filter>
         </activity>
 
-        <service android:name="me.zhanghai.android.files.filejob.FileJobService" />
+        <service
+            android:name="me.zhanghai.android.files.filejob.FileJobService"
+            android:foregroundServiceType="dataSync" />
 
-        <service android:name="me.zhanghai.android.files.ftpserver.FtpServerService" />
+        <service android:name="me.zhanghai.android.files.ftpserver.FtpServerService"
+            android:foregroundServiceType="dataSync" />
 
         <service
             android:name="me.zhanghai.android.files.ftpserver.FtpServerTileService"
@@ -312,6 +338,15 @@
             </intent-filter>
             <meta-data
                 android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+        </service>
+
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
                 android:value="true" />
         </service>
 

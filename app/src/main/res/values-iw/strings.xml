@@ -7,7 +7,7 @@
 
 <resources>
 
-    <string name="app_name">LeOS-Files</string>
+    <string name="app_name">Material Files</string>
 
     <string name="close">סגירה</string>
     <string name="copy">העתקה</string>
@@ -42,7 +42,6 @@
     <string name="share">שיתוף</string>
     <string name="show">הצגה</string>
     <string name="skip">דילוג</string>
-    <string name="sort">מיון</string>
     <string name="stop">עצירה</string>
     <string name="unknown">לא ידוע</string>
     <string name="view">הצגה</string>
@@ -59,10 +58,10 @@
         <item quantity="other">%1$,d בתים</item>
     </plurals>
 
+    <string name="all_files_access_rationale_message">היישום זקוק לגישה כדי לנהל את כל הקבצים. יש לאפשר את הגישה בהגדרת המערכת הבאה.</string>
+    <!-- The allow button before Android 10 was in all-caps. -->
     <string name="storage_permission_rationale_message">היישום זקוק להרשאה כדי לגשת לקבצים. יש ללחוץ על \"אפשר\" בתיבת הדו שיח הבאה של המערכת.</string>
     <string name="storage_permission_permanently_denied_message">היישום זקוק להרשאה כדי לגשת לקבצים. יש להעניק הרשאת \"אחסון\" בהגדרות המערכת.</string>
-    <string name="all_files_access_rationale_message">היישום זקוק לגישה כדי לנהל את כל הקבצים. יש לאפשר את הגישה בהגדרת המערכת הבאה.</string>
-
     <string name="notification_channel_background_activity_start_name">פעולות ברקע</string>
     <string name="notification_channel_background_activity_start_description">ביצוע פעולות כשהיישום פועל ברקע</string>
     <string name="notification_channel_file_job_name">פעולות קובץ</string>
@@ -334,7 +333,6 @@
     <string name="file_list_action_sort_by_last_modified">השתנה לאחרונה</string>
     <string name="file_list_action_sort_order_ascending">עולה</string>
     <string name="file_list_action_sort_directories_first">תיקיות תחילה</string>
-    <string name="file_list_action_sort_path_specific">לתיקייה זו בלבד</string>
     <string name="file_list_action_new_task">חלון חדש</string>
     <string name="file_list_action_navigate_up">עלה</string>
     <string name="file_list_action_navigate_to">מעבר אל</string>
@@ -344,7 +342,6 @@
     <string name="file_list_action_add_bookmark">הוספת סימנייה</string>
     <string name="file_list_action_create_shortcut">יצירת קיצור דרך</string>
     <string name="file_list_breadcrumb_action_open_in_new_task">פתיחה בחלון חדש</string>
-    <string name="file_list_select_title_format">%1$,d נבחרו</string>
     <string name="file_list_select_current_directory_format">בחירת “%1$s”</string>
     <string name="file_list_paste_move_title_format">מעביר את %1$,d</string>
     <string name="file_list_paste_copy_title_format">מעתיק את %1$,d</string>
@@ -605,7 +602,6 @@
     <string name="ftp_server_state_summary_stopping">עוצר…</string>
     <string name="ftp_server_state_summary_stopped">לא התחיל</string>
     <string name="ftp_server_url_title">כתובת</string>
-    <string name="ftp_server_url_summary_no_local_inet_address">לא ניתן לאחזר כתובת IP מקומית</string>
     <string name="ftp_server_url_menu_copy_url">העתקת כתובת</string>
     <string name="ftp_server_url_menu_copy_password">העתקת סיסמה</string>
     <string name="ftp_server_configuration_title">תצורה</string>
@@ -615,8 +611,6 @@
     <string name="ftp_server_port_title">פתחה</string>
     <string name="ftp_server_home_directory_title">תיקיית שורש</string>
     <string name="ftp_server_writable_title">איפשור כתיבה</string>
-    <string name="ftp_server_notification_text">שרת FTP פועל</string>
-
     <string name="settings_title">הגדרות</string>
     <string name="settings_interface_title">ממשק</string>
     <string name="settings_theme_color_title">צבע ערכת נושא</string>
