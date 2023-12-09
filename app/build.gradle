@@ -15,13 +15,7 @@ buildscript {
         google()
         mavenCentral()
     }
-    dependencies {
-        classpath 'com.google.gms:google-services:4.4.0'
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.9'
-    }
 }
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.google.firebase.crashlytics'
 //#endif
 
 android {
@@ -36,7 +30,7 @@ android {
         //noinspection OldTargetApi
         targetSdk 34
         versionCode 34
-        versionName '1.6.2'
+        versionName '1.6.3'
         resValue 'string', 'app_version', versionName + ' (' + versionCode + ')'
         buildConfigField 'String', 'FILE_PROVIDIER_AUTHORITY', 'APPLICATION_ID + ".file_provider"'
         resValue 'string', 'app_provider_authority', applicationId + '.app_provider'
@@ -74,9 +68,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
 //#ifdef NONFREE
-            firebaseCrashlytics {
-                nativeSymbolUploadEnabled true
-            }
+
 //#endif
         }
     }
