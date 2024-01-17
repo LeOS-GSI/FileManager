@@ -1,15 +1,18 @@
-Subject: [PATCH] readme
+From c24376703439dd84ec628f6c1ac3f993b3781212 Mon Sep 17 00:00:00 2001
+From: harvey186 <harvey186@hotmail.com>
+Date: Wed, 17 Jan 2024 12:03:11 +0100
+Subject: [PATCH] readme_canges
+
 ---
-Index: README.md
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
+ README.md | 17 +++++------------
+ 1 file changed, 5 insertions(+), 12 deletions(-)
+
 diff --git a/README.md b/README.md
---- a/README.md	(revision f4067b9697f50ea55ba8cae2abf913298c080922)
-+++ b/README.md	(revision 5a604dc8e39c7e7b213fbccd9cdce25a2f2541e7)
+index c081ee13..bbbbad96 100644
+--- a/README.md
++++ b/README.md
 @@ -1,16 +1,9 @@
--# Material Files
+-yeah, you have t# Material Files
 -
 -[本文中文版](README_zh-CN.md)
 -
@@ -28,7 +31,16 @@ diff --git a/README.md b/README.md
  
  ## Preview
  
-@@ -68,7 +61,7 @@
+@@ -34,7 +27,7 @@ An open source Material Design file manager, for Android 5.0+.
+ 
+ Because I like Material Design, and clean Material Design.
+ 
+-There are already a handful of powerful file managers, but most of them just aren't Material Design. And even among the ones with Material Design, they usually have various minor design flaws (layout, alignment, padding, icon, font, etc) across the app which makes me uncomfortable, while still being minor enough so that not everybody would care to fix it. So I had to create my own.
++There are already a handful of powerful file managers, but most of them just isn't Material Design. And even among the ones with Material Design, they usually have various minor design flaws (layout, alignment, padding, icon, font, etc) across the app which makes me uncomfortable, while still being minor enough so that not everybody would care to fix it. So I had to create my own.
+ 
+ Because I want an open source file manager.
+ 
+@@ -68,7 +61,7 @@ Thank you if you choose to include Material Files in your custom ROM! However si
  
  ## License
  
@@ -37,3 +49,6 @@ diff --git a/README.md b/README.md
  
      This program is free software: you can redistribute it and/or modify
      it under the terms of the GNU General Public License as published by
+-- 
+2.34.1
+

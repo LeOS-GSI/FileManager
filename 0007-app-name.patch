@@ -1,0 +1,327 @@
+From 3450371a5b5a1a9b52e1ffe3ed4fd1c6931ae1b2 Mon Sep 17 00:00:00 2001
+From: harvey186 <harvey186@hotmail.com>
+Date: Wed, 17 Jan 2024 12:01:18 +0100
+Subject: [PATCH] app name
+
+---
+ app/build.gradle                           | 6 +++---
+ app/src/main/AndroidManifest.xml           | 2 +-
+ app/src/main/res/values-bg/strings.xml     | 2 +-
+ app/src/main/res/values-cs/strings.xml     | 2 +-
+ app/src/main/res/values-de/strings.xml     | 2 +-
+ app/src/main/res/values-es/strings.xml     | 2 +-
+ app/src/main/res/values-eu/strings.xml     | 2 +-
+ app/src/main/res/values-fi/strings.xml     | 2 +-
+ app/src/main/res/values-fr/strings.xml     | 2 +-
+ app/src/main/res/values-hu/strings.xml     | 2 +-
+ app/src/main/res/values-in/strings.xml     | 2 +-
+ app/src/main/res/values-it/strings.xml     | 2 +-
+ app/src/main/res/values-iw/strings.xml     | 2 +-
+ app/src/main/res/values-ja/strings.xml     | 2 +-
+ app/src/main/res/values-ko/strings.xml     | 2 +-
+ app/src/main/res/values-pl/strings.xml     | 2 +-
+ app/src/main/res/values-pt-rBR/strings.xml | 2 +-
+ app/src/main/res/values-pt-rPT/strings.xml | 2 +-
+ app/src/main/res/values-ro/strings.xml     | 2 +-
+ app/src/main/res/values-uk/strings.xml     | 2 +-
+ app/src/main/res/values-vi/strings.xml     | 2 +-
+ app/src/main/res/values/strings.xml        | 2 +-
+ 22 files changed, 24 insertions(+), 24 deletions(-)
+
+diff --git a/app/build.gradle b/app/build.gradle
+index 0a5c60e8..2d564ca5 100644
+--- a/app/build.gradle
++++ b/app/build.gradle
+@@ -24,13 +24,13 @@ android {
+     compileSdk 34
+     ndkVersion '26.1.10909125'
+     defaultConfig {
+-        applicationId 'me.zhanghai.android.files'
++        applicationId 'me.leos.android.files'
+         minSdk 21
+         // Not supporting notification runtime permission yet.
+         //noinspection OldTargetApi
+         targetSdk 34
+-        versionCode 34
+-        versionName '1.6.3'
++        versionCode 161
++        versionName '1.6.4'
+         resValue 'string', 'app_version', versionName + ' (' + versionCode + ')'
+         buildConfigField 'String', 'FILE_PROVIDIER_AUTHORITY', 'APPLICATION_ID + ".file_provider"'
+         resValue 'string', 'app_provider_authority', applicationId + '.app_provider'
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+index ac67576d..1d16484b 100644
+--- a/app/src/main/AndroidManifest.xml
++++ b/app/src/main/AndroidManifest.xml
+@@ -46,7 +46,7 @@
+         android:banner="@drawable/banner"
+         android:fullBackupContent="true"
+         android:icon="@mipmap/launcher_icon"
+-        android:label="@string/app_name"
++        android:label="LeOS-Files"
+         android:requestLegacyExternalStorage="true"
+         android:requestRawExternalStorageAccess="true"
+         android:resizeableActivity="true"
+diff --git a/app/src/main/res/values-bg/strings.xml b/app/src/main/res/values-bg/strings.xml
+index 5ff13899..e1d47ebf 100644
+--- a/app/src/main/res/values-bg/strings.xml
++++ b/app/src/main/res/values-bg/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Затваряне</string>
+     <string name="copy">Копиране</string>
+diff --git a/app/src/main/res/values-cs/strings.xml b/app/src/main/res/values-cs/strings.xml
+index e9207e1e..82b115d7 100644
+--- a/app/src/main/res/values-cs/strings.xml
++++ b/app/src/main/res/values-cs/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Zavřít</string>
+     <string name="copy">Kopírovat</string>
+diff --git a/app/src/main/res/values-de/strings.xml b/app/src/main/res/values-de/strings.xml
+index 334e974e..914ed244 100644
+--- a/app/src/main/res/values-de/strings.xml
++++ b/app/src/main/res/values-de/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Schließen</string>
+     <string name="copy">Kopieren</string>
+diff --git a/app/src/main/res/values-es/strings.xml b/app/src/main/res/values-es/strings.xml
+index 30406dda..5e99d18a 100644
+--- a/app/src/main/res/values-es/strings.xml
++++ b/app/src/main/res/values-es/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Cerrar</string>
+     <string name="copy">Copiar</string>
+diff --git a/app/src/main/res/values-eu/strings.xml b/app/src/main/res/values-eu/strings.xml
+index e364f9f1..57c9215d 100644
+--- a/app/src/main/res/values-eu/strings.xml
++++ b/app/src/main/res/values-eu/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Itxi</string>
+     <string name="copy">Kopiatu</string>
+diff --git a/app/src/main/res/values-fi/strings.xml b/app/src/main/res/values-fi/strings.xml
+index 907567b6..4d6ba4cc 100644
+--- a/app/src/main/res/values-fi/strings.xml
++++ b/app/src/main/res/values-fi/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Sulje</string>
+     <string name="copy">Kopioi</string>
+diff --git a/app/src/main/res/values-fr/strings.xml b/app/src/main/res/values-fr/strings.xml
+index 7ac0e747..804b576d 100644
+--- a/app/src/main/res/values-fr/strings.xml
++++ b/app/src/main/res/values-fr/strings.xml
+@@ -9,7 +9,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     tools:ignore="ImpliedQuantity,MissingQuantity">
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Fermer</string>
+     <string name="copy">Copier</string>
+diff --git a/app/src/main/res/values-hu/strings.xml b/app/src/main/res/values-hu/strings.xml
+index b16801f8..e9cf57da 100644
+--- a/app/src/main/res/values-hu/strings.xml
++++ b/app/src/main/res/values-hu/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Bezárás</string>
+     <string name="copy">Másolás</string>
+diff --git a/app/src/main/res/values-in/strings.xml b/app/src/main/res/values-in/strings.xml
+index a43dfb77..7a33a36e 100644
+--- a/app/src/main/res/values-in/strings.xml
++++ b/app/src/main/res/values-in/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Tutup</string>
+     <string name="copy">Salin</string>
+diff --git a/app/src/main/res/values-it/strings.xml b/app/src/main/res/values-it/strings.xml
+index 7be1df88..62c94fc1 100644
+--- a/app/src/main/res/values-it/strings.xml
++++ b/app/src/main/res/values-it/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Chiudi</string>
+     <string name="copy">Copia</string>
+diff --git a/app/src/main/res/values-iw/strings.xml b/app/src/main/res/values-iw/strings.xml
+index 3f022253..c15a69ed 100644
+--- a/app/src/main/res/values-iw/strings.xml
++++ b/app/src/main/res/values-iw/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">סגירה</string>
+     <string name="copy">העתקה</string>
+diff --git a/app/src/main/res/values-ja/strings.xml b/app/src/main/res/values-ja/strings.xml
+index 44abb7f1..29bde639 100644
+--- a/app/src/main/res/values-ja/strings.xml
++++ b/app/src/main/res/values-ja/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">閉じる</string>
+     <string name="copy">コピー</string>
+diff --git a/app/src/main/res/values-ko/strings.xml b/app/src/main/res/values-ko/strings.xml
+index ea534ef0..4d8c62ac 100644
+--- a/app/src/main/res/values-ko/strings.xml
++++ b/app/src/main/res/values-ko/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">닫기</string>
+     <string name="copy">복사</string>
+diff --git a/app/src/main/res/values-pl/strings.xml b/app/src/main/res/values-pl/strings.xml
+index 29b1912a..87c4e9e2 100644
+--- a/app/src/main/res/values-pl/strings.xml
++++ b/app/src/main/res/values-pl/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Zamknij</string>
+     <string name="copy">Kopiuj</string>
+diff --git a/app/src/main/res/values-pt-rBR/strings.xml b/app/src/main/res/values-pt-rBR/strings.xml
+index 571e28be..f06a6209 100644
+--- a/app/src/main/res/values-pt-rBR/strings.xml
++++ b/app/src/main/res/values-pt-rBR/strings.xml
+@@ -9,7 +9,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     tools:ignore="ImpliedQuantity">
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Fechar</string>
+     <string name="copy">Copiar</string>
+diff --git a/app/src/main/res/values-pt-rPT/strings.xml b/app/src/main/res/values-pt-rPT/strings.xml
+index 9f6ec90f..f17abb39 100644
+--- a/app/src/main/res/values-pt-rPT/strings.xml
++++ b/app/src/main/res/values-pt-rPT/strings.xml
+@@ -9,7 +9,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     tools:ignore="ImpliedQuantity">
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Fechar</string>
+     <string name="copy">Copiar</string>
+diff --git a/app/src/main/res/values-ro/strings.xml b/app/src/main/res/values-ro/strings.xml
+index 2bc0b5f0..17febde0 100644
+--- a/app/src/main/res/values-ro/strings.xml
++++ b/app/src/main/res/values-ro/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Închide</string>
+     <string name="copy">Copiază</string>
+diff --git a/app/src/main/res/values-uk/strings.xml b/app/src/main/res/values-uk/strings.xml
+index f6286741..f75535ea 100644
+--- a/app/src/main/res/values-uk/strings.xml
++++ b/app/src/main/res/values-uk/strings.xml
+@@ -9,7 +9,7 @@
+     xmlns:tools="http://schemas.android.com/tools"
+     tools:ignore="ImpliedQuantity">
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Закрити</string>
+     <string name="copy">Копіювати</string>
+diff --git a/app/src/main/res/values-vi/strings.xml b/app/src/main/res/values-vi/strings.xml
+index b279386a..9e1ff050 100644
+--- a/app/src/main/res/values-vi/strings.xml
++++ b/app/src/main/res/values-vi/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Đóng</string>
+     <string name="copy">Sao chép</string>
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+index 713fb8d9..f2f210c4 100644
+--- a/app/src/main/res/values/strings.xml
++++ b/app/src/main/res/values/strings.xml
+@@ -7,7 +7,7 @@
+ 
+ <resources>
+ 
+-    <string name="app_name">Material Files</string>
++    <string name="app_name">LeOS-Files</string>
+ 
+     <string name="close">Close</string>
+     <string name="copy">Copy</string>
+-- 
+2.34.1
+
